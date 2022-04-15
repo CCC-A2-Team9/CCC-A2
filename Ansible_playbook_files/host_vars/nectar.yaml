@@ -1,0 +1,47 @@
+# COMP90024 Project2 Team9
+
+# Common variables
+availability_zone: melbourne-qh2-uom
+instance_image: 356ff1ed-5960-4ac2-96a1-0c0198e6a999 #NeCTAR Ubuntu 20.04 LTS (Focal) amd64
+instance_key_name: grp9_KeyPair 
+backend_instance_flavor: uom.mse.2c9g
+frontend_instance_flavor: uom.mse.1c4g
+
+# Volume
+volumes:
+  - vol_name: data@Instance_frontend
+    vol_size: 50
+  - vol_name: data@Instance_backend-1
+    vol_size: 150
+  - vol_name: data@Instance_backend-2
+    vol_size: 150
+  - vol_name: data@Instance_backend-3
+    vol_size: 150
+
+# Security group
+# 后续还需要加couchdb_access, intra_cluster_communication,...for couchdb
+security_groups:
+  - name: access_ssh
+    description: "Security group for SSH access"
+    protocol: tcp
+    port_range_min: 22
+    port_range_max: 22
+    remote_ip_prefix: 0.0.0.0/0
+  - name: access_http
+    description: "Security group for HTTP access"
+    protocol: tcp
+    port_range_min: 80
+    port_range_max: 80
+    remote_ip_prefix: 0.0.0.0/0
+
+# Instance
+Frontend_instance:
+  - name: frontend_instance
+    volumes: ["vol-44"]
+Backend_instances:
+  - name: backend_instance-1
+    volumes: ["vol-11"]
+  - name: backend_instance-2
+    volumes: ["vol-22"]
+  - name: backend_instance-3
+    volumes: ["vol-33"]
