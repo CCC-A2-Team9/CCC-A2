@@ -1,0 +1,22 @@
+# COMP90024 Project2 Team9
+
+- hosts: localhost
+  # vars:              #@need to check
+  #   ansible_python_interpreter: /home/arnav/anaconda3/bin/python3
+  vars_files:
+    - host_vars/nectar.yaml
+  gather_facts: true
+
+  roles:
+    - role: openstack-common
+    - role: openstack-volume
+    - role: openstack-security-group
+    - role: openstack-instance
+
+  
+  #@后续需要添加: 
+  #hosts: backend_instance
+  #hosts: backend_instance:!master
+  #hosts: frontend_instance
+
+
