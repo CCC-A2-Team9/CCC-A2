@@ -5,7 +5,7 @@ availability_zone: melbourne-qh2-uom
 instance_image: 356ff1ed-5960-4ac2-96a1-0c0198e6a999 #NeCTAR Ubuntu 20.04 LTS (Focal) amd64
 instance_key_name: grp9_KeyPair 
 backend_instance_flavor: uom.mse.2c9g
-frontend_instance_flavor: uom.mse.1c4g
+frontend_instance_flavor: uom.mse.2c9g
 
 # Volume
 volumes:
@@ -21,18 +21,32 @@ volumes:
 # Security group
 # 后续还需要加couchdb_access, intra_cluster_communication,...for couchdb
 security_groups:
-  - name: access_ssh
+  - name: ssh
     description: "Security group for SSH access"
     protocol: tcp
     port_range_min: 22
     port_range_max: 22
     remote_ip_prefix: 0.0.0.0/0
-  - name: access_http
+  - name: http
     description: "Security group for HTTP access"
     protocol: tcp
     port_range_min: 80
     port_range_max: 80
     remote_ip_prefix: 0.0.0.0/0
+
+  - name: couchdb
+    description: "Security group for couchDB access"
+    protocol: tcp
+    port_range_min: 5984
+    port_range_max: 5987
+    remote_ip_prefix: 0.0.0.0/0
+  - name: couchdb cluster
+    description: "Security group for couchDB cluster access"
+    protocol: tcp
+    port_range_min: 9100
+    port_range_max: 9200
+    remote_ip_prefix: 0.0.0.0/0
+    
 
 # Instance
 Frontend_instance:
