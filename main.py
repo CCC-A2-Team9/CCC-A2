@@ -5,7 +5,7 @@ config = configparser.ConfigParser()
 config.read('config.ini')
 import json
 import couchdb
-couch = couchdb.Server("http://admin:nzxiang619524@127.0.0.1:5984")
+couch = couchdb.Server("http://admin:0000@127.0.0.1:5984")
 db = couch.create('tweet9')
 
 
