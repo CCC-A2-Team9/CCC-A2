@@ -7,7 +7,7 @@
     name: '{{ item.name }}'
     image: '{{ instance_image }}'
     key_name: '{{ instance_key_name }}'
-    flavor: '{{ backend_instance_flavor }}'     #flavor for Backend_instances
+    flavor: '{{ instance_flavor }}'     #flavor for Backend_instances
     availability_zone: '{{ availability_zone }}'
     security_groups: '{{ sg_names }}'
     volumes: '{{ item.volumes }}'
