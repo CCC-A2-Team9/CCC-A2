@@ -2,7 +2,7 @@
 
 # Create iamges from vars
 - name: Receive all available openstack images
-  openstack.cloud.image_facts:
+  os_image_facts:
 
 - name: Get image names and ids
   ansible.builtin.set_fact:
