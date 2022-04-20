@@ -2,15 +2,16 @@
 
 # Create iamges from vars
 - name: Receive all available openstack images
-  os_image_facts:
+  os_image_info:
+  register: image_result
 
 - name: Get image names and ids
-  ansible.builtin.set_fact:
+  set_fact:
     image_facts: "{{ image_facts|default([]) + [{'name': item.name, 'id': item.id}] }}"
-  loop: '{{ openstack_image }}'
+  loop: '{{ image_result.openstack_image }}'
   when: item.name is defined
 
 - name: Show images
-  ansible.builtin.debug:
+  debug:
     msg: "Image name: {{ item.name }}; Image id: {{ item.id }}"
   loop: '{{ image_facts }}'

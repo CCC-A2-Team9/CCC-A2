@@ -43,5 +43,7 @@
 # Add the master couchdb to Ansible in-memory inventory      ########@后续建好couchdb之后需要check
 - name: Add host
   add_host:
-    name: "{{ groups.Backend[0] }}"
-    groups: master_couchdb                      #Group for master couchdb
+    name: '{{ item.openstack.public_v4 }}'
+    groups: instances
+  loop: '{{ os_instance.results }}'
+  when: item.openstack is defined                     
