@@ -1,4 +1,0 @@
-ansible_ssh_host=172.26.134.86
-ansible_ssh_host=172.26.133.87
-ansible_ssh_host=172.26.128.144
-ansible_ssh_host=172.26.133.183
