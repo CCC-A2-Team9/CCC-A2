@@ -2,60 +2,77 @@
 
 # Common variables
 availability_zone: melbourne-qh2-uom
+instance_network: qh2-uom-internal
+instance_flavor: uom.mse.2c9g
 instance_image: 356ff1ed-5960-4ac2-96a1-0c0198e6a999 #NeCTAR Ubuntu 20.04 LTS (Focal) amd64
 instance_key_name: grp9_KeyPair 
-backend_instance_flavor: uom.mse.2c9g
-frontend_instance_flavor: uom.mse.2c9g
 
-# Volume
-volumes:
-  - vol_name: data@Instance_frontend
-    vol_size: 50
-  - vol_name: data@Instance_backend-1
-    vol_size: 150
-  - vol_name: data@Instance_backend-2
-    vol_size: 150
-  - vol_name: data@Instance_backend-3
-    vol_size: 150
 
-# Security group
-# 后续还需要加couchdb_access, intra_cluster_communication,...for couchdb
+# ****************************** Security group ******************************
+# Create a TCP rule covering all ports
 security_groups:
-  - name: ssh
-    description: "Security group for SSH access"
+  - name: instance1-security-group
+    description: "security group for instance1 server"
     protocol: tcp
-    port_range_min: 22
-    port_range_max: 22
+    port_range_min: 1
+    port_range_max: 65535
     remote_ip_prefix: 0.0.0.0/0
-  - name: http
-    description: "Security group for HTTP access"
+  - name: instance2-security-group
+    description: "security group for instance2 server"
     protocol: tcp
-    port_range_min: 80
-    port_range_max: 80
+    port_range_min: 1
+    port_range_max: 65535
     remote_ip_prefix: 0.0.0.0/0
-
-  - name: couchdb
-    description: "Security group for couchDB access"
+  - name: instance3-security-group
+    description: "security group for instance3 server"
     protocol: tcp
-    port_range_min: 5984
-    port_range_max: 5987
+    port_range_min: 1
+    port_range_max: 65535
     remote_ip_prefix: 0.0.0.0/0
-  - name: couchdb cluster
-    description: "Security group for couchDB cluster access"
+  - name: instance4-security-group
+    description: "security group for instance4 server"
     protocol: tcp
-    port_range_min: 9100
-    port_range_max: 9200
+    port_range_min: 1
+    port_range_max: 65535
     remote_ip_prefix: 0.0.0.0/0
     
 
-# Instance
-Frontend_instance:
-  - name: frontend_instance
-    volumes: ["vol-44"]
-Backend_instances:
-  - name: backend_instance-1
-    volumes: ["vol-11"]
-  - name: backend_instance-2
-    volumes: ["vol-22"]
-  - name: backend_instance-3
-    volumes: ["vol-33"]
+
+# ****************************** Volume ******************************
+volumes:
+  - vol_name: instance1-volume
+    vol_size: 50
+    device: /dev/vdb
+    mountpoint: /data
+  - vol_name: instance2-volume
+    vol_size: 150
+    device: /dev/vdb
+    mountpoint: /data
+  - vol_name: instance3-volume
+    vol_size: 150
+    device: /dev/vdb
+    mountpoint: /data
+  - vol_name: instance4-volume
+    vol_size: 150
+    device: /dev/vdb
+    mountpoint: /data
+
+
+# ****************************** Instance ******************************
+instances:
+  - name: instance1
+    security_groups: instance1-security-group
+    volume_ids: '{ instance1_volumes|default([]) }'
+    volumes: ['instance1-volume']
+  - name: instance2
+    security_groups: instance2-security-group
+    volume_ids: '{ instance2_volumes|default([]) }'
+    volumes: ['instance2-volume']
+  - name: instance3
+    security_groups: instance3-security-group
+    volume_ids: '{ instance3_volumes|default([]) }'
+    volumes: ['instance3-volume']
+  - name: instance4
+    security_groups: instance4-security-group
+    volume_ids: '{ instance4_volumes|default([]) }'
+    volumes: ['instance4-volume']

@@ -9,18 +9,18 @@
     key_name: '{{ instance_key_name }}'
     flavor: '{{ instance_flavor }}'     #flavor for Backend_instances
     availability_zone: '{{ availability_zone }}'
-    security_groups: '{{ sg_names }}'
+    security_groups: '{{ item.security_groups }}'
     volumes: '{{ item.volumes }}'
     auto_floating_ip: yes
     wait: yes
     timeout: 600
     state: present
-  loop: '{{ Backend_instances }}' 
-  register: os_Backend_instance
+  loop: '{{ instances }}' 
+  register: os_instance
 
 - ansible.builtin.debug:
     msg: "Instance {{ item.openstack.name }} has been created. IP address is {{ item.openstack.public_v4 }}"
-  loop: '{{ os_Backend_instance.results }}'
+  loop: '{{ os_instance.results }}'
   when: item.openstack is defined
 
 - name: Wait for connection
@@ -29,15 +29,15 @@
     port: 22
     timeout: 120
     search_regex: OpenSSH
-  loop: '{{ os_Backend_instance.results }}'
+  loop: '{{ os_instance.results }}'
   when: item.openstack is defined
 
 # Add hosts to Ansible in-memory inventory
 - name: Add host
   ansible.builtin.add_host:
     name: '{{ item.openstack.public_v4 }}' 
-    groups: Backend                             #Group for Backend
-  loop: '{{ os_Backend_instance.results }}'
+    groups: instances                             #Group for Backend
+  loop: '{{ os_instance.results }}'
   when: item.openstack is defined
 
 # Add the master couchdb to Ansible in-memory inventory      ########@后续建好couchdb之后需要check
@@ -45,44 +45,3 @@
   add_host:
     name: "{{ groups.Backend[0] }}"
     groups: master_couchdb                      #Group for master couchdb
-
-
-################################## For Frontend_instances ################################# 
-# Create an instance for frontend on NeCTAR
-- name: Create an instance
-  openstack.cloud.server:
-    name: '{{ item.name }}'
-    image: '{{ instance_image }}'
-    key_name: '{{ instance_key_name }}'
-    flavor: '{{ frontend_instance_flavor }}'    #flavor for Frontend_instance
-    availability_zone: '{{ availability_zone }}'
-    security_groups: '{{ sg_names }}'
-    volumes: '{{ item.volumes }}'
-    auto_floating_ip: yes
-    wait: yes
-    timeout: 600
-    state: present
-  loop: '{{ Frontend_instance }}'
-  register: os_Frontend_instance
-
-- ansible.builtin.debug:
-    msg: "Instance {{ item.openstack.name }} has been created. IP address is {{ item.openstack.public_v4 }}"
-  loop: '{{ os_Frontend_instance.results }}'
-  when: item.openstack is defined
-
-- name: Wait for connection
-  ansible.builtin.wait_for:
-    host: "{{ item.openstack.public_v4 }}"
-    port: 22
-    timeout: 120
-    search_regex: OpenSSH
-  loop: '{{ os_Frontend_instance.results }}'
-  when: item.openstack is defined
-
-# Add hosts to Ansible in-memory inventory
-- name: Add host
-  ansible.builtin.add_host:
-    name: '{{ item.openstack.public_v4 }}'
-    groups: Frontend                             #Group for Frontend   
-  loop: '{{ os_Frontend_instance.results }}'
-  when: item.openstack is defined
