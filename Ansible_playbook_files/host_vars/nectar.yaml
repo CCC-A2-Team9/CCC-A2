@@ -5,7 +5,7 @@ availability_zone: melbourne-qh2-uom
 instance_network: qh2-uom-internal
 instance_flavor: uom.mse.2c9g
 instance_image: 356ff1ed-5960-4ac2-96a1-0c0198e6a999 #NeCTAR Ubuntu 20.04 LTS (Focal) amd64
-instance_key_name: grp9_KeyPair 
+instance_key_name: NectarGroupKey 
 wm_inventory_file: "./inventory/hosts.ini"
 image_facts: []
 
