@@ -1,0 +1,225 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.970,
+                    -37.780
+                ]
+            },
+            "type": "Feature",
+            "properties": {
+                "description": "Carlton",
+                "marker-symbol": "rail-metro",
+                "title": "Carlton",
+                "url": "http://www.wmata.com/rider_tools/pids/showpid.cfm?station_id=107",
+                "lines": [
+                    "Green"
+                ],
+                "address": "Carlton, VIC"
+            }
+        },
+        {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.950,
+                    -37.810
+                ]
+            },
+            "type": "Feature",
+            "properties": {
+                "description": "Docklands",
+                "marker-symbol": "rail-metro",
+                "title": "Docklands",
+                "url": "http://www.wmata.com/rider_tools/pids/showpid.cfm?station_id=107",
+                "lines": [
+                    "Green"
+                ],
+                "address": "Docklands, VIC"
+            }
+        },
+        {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.990,
+                    -37.820
+                ]
+            },
+            "type": "Feature",
+            "properties": {
+                "description": "East Melbourne",
+                "marker-symbol": "rail-metro",
+                "title": "East Melbourne",
+                "url": "http://www.wmata.com/rider_tools/pids/showpid.cfm?station_id=107",
+                "lines": [
+                    "Green"
+                ],
+                "address": "East Melbourne, VIC"
+            }
+        },
+        {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.930,
+                    -37.790
+                ]
+            },
+            "type": "Feature",
+            "properties": {
+                "description": "Kensington",
+                "marker-symbol": "rail-metro",
+                "title": "Kensington",
+                "url": "http://www.wmata.com/rider_tools/pids/showpid.cfm?station_id=107",
+                "lines": [
+                    "Green"
+                ],
+                "address": "Kensington, VIC"
+            }
+        },
+        {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.770,
+                    -38.370
+                ]
+            },
+            "type": "Feature",
+            "properties": {
+                "description": "Melbourne",
+                "marker-symbol": "rail-metro",
+                "title": "Melbourne",
+                "url": "http://www.wmata.com/rider_tools/pids/showpid.cfm?station_id=68",
+                "lines": [
+                    "Orange"
+                ],
+                "address": "Melbourne, VIC"
+            }
+        },
+        {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.060,
+                    -37.910
+                ]
+            },
+            "type": "Feature",
+            "properties": {
+                "description": "North Melbourne",
+                "marker-symbol": "rail-metro",
+                "title": "North Melbourne",
+                "url": "http://www.wmata.com/rider_tools/pids/showpid.cfm?station_id=68",
+                "lines": [
+                    "Orange"
+                ],
+                "address": "North Melbourne, VIC"
+            }
+        },
+        {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.960,
+                    -37.800
+                ]
+            },
+            "type": "Feature",
+            "properties": {
+                "description": "Parkville",
+                "marker-symbol": "rail-metro",
+                "title": "Parkville",
+                "url": "http://www.wmata.com/rider_tools/pids/showpid.cfm?station_id=68",
+                "lines": [
+                    "Orange"
+                ],
+                "address": "Parkville, VIC"
+            }
+        },
+        {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.890,
+                    -37.850
+                ]
+            },
+            "type": "Feature",
+            "properties": {
+                "description": "Port Melbourne",
+                "marker-symbol": "rail-metro",
+                "title": "Port Melbourne",
+                "url": "http://www.wmata.com/rider_tools/pids/showpid.cfm?station_id=68",
+                "lines": [
+                    "Orange"
+                ],
+                "address": "Port Melbourne, VIC"
+            }
+        },
+        {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.970,
+                    -37.820
+                ]
+            },
+            "type": "Feature",
+            "properties": {
+                "description": "Southbank",
+                "marker-symbol": "rail-metro",
+                "title": "Southbank",
+                "url": "http://www.wmata.com/rider_tools/pids/showpid.cfm?station_id=68",
+                "lines": [
+                    "Orange"
+                ],
+                "address": "Southbank, VIC"
+            }
+        },
+        {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.060,
+                    -36.990
+                ]
+            },
+            "type": "Feature",
+            "properties": {
+                "description": "South Yarra",
+                "marker-symbol": "rail-metro",
+                "title": "South Yarra",
+                "url": "http://www.wmata.com/rider_tools/pids/showpid.cfm?station_id=68",
+                "lines": [
+                    "Orange"
+                ],
+                "address": "South Yarra, VIC"
+            }
+        },
+        {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.930,
+                    -37.790
+                ]
+            },
+            "type": "Feature",
+            "properties": {
+                "description": "Flemington",
+                "marker-symbol": "rail-metro",
+                "title": "Flemington",
+                "url": "http://www.wmata.com/rider_tools/pids/showpid.cfm?station_id=68",
+                "lines": [
+                    "Orange"
+                ],
+                "address": "Flemington, VIC"
+            }
+        }
+    ]
+}
