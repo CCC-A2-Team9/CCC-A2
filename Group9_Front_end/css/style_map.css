@@ -2179,6 +2179,23 @@ ul.my-friends li .friends-pic {
     bottom: 0;
     width: 100vw;
 } */
+
+.marker {
+    background-image: url('../img/map_marker.svg');
+    background-size: cover;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    }
+    .mapboxgl-popup {
+    max-width: 200px;
+    }
+    .mapboxgl-popup-content {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    }
+
 #fit {
     display: block;
     position: relative;
