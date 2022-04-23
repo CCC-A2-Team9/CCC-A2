@@ -1,0 +1,21 @@
+---
+- hosts: localhost
+  gather_facts: true
+
+  roles:
+    - role: add-NectarGroupKey
+
+- hosts: instances
+  vars_files:
+    - host_vars/config.yaml
+    - host_vars/nectar.yaml
+  gather_facts: true
+
+  roles:
+     - role: add-proxy
+     - role: install-dependencies
+     - role: setup-docker
+     - role: git-clone-source-repository
+     - role: mount-volumes
+
+#host_vars/config 部分信息未完成
