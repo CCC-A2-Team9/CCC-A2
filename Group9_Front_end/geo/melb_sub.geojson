@@ -11,10 +11,10 @@
             },
             "type": "Feature",
             "properties": {
-                "description": "Carlton",
+                "description": "Population: 18,535 ",
                 "marker-symbol": "rail-metro",
                 "title": "Carlton",
-                "url": "http://www.wmata.com/rider_tools/pids/showpid.cfm?station_id=107",
+                "url": "https://en.wikipedia.org/wiki/Carlton,_Victoria",
                 "lines": [
                     "Green"
                 ],
@@ -31,10 +31,10 @@
             },
             "type": "Feature",
             "properties": {
-                "description": "Docklands",
+                "description": "Population: 10,964",
                 "marker-symbol": "rail-metro",
                 "title": "Docklands",
-                "url": "http://www.wmata.com/rider_tools/pids/showpid.cfm?station_id=107",
+                "url": "https://en.wikipedia.org/wiki/Docklands,_Victoria7",
                 "lines": [
                     "Green"
                 ],
@@ -51,10 +51,10 @@
             },
             "type": "Feature",
             "properties": {
-                "description": "East Melbourne",
+                "description": "Population: 4,964",
                 "marker-symbol": "rail-metro",
                 "title": "East Melbourne",
-                "url": "http://www.wmata.com/rider_tools/pids/showpid.cfm?station_id=107",
+                "url": "https://en.wikipedia.org/wiki/East_Melbourne,_Victoria",
                 "lines": [
                     "Green"
                 ],
@@ -71,10 +71,10 @@
             },
             "type": "Feature",
             "properties": {
-                "description": "Kensington",
+                "description": "Population: 10,812",
                 "marker-symbol": "rail-metro",
                 "title": "Kensington",
-                "url": "http://www.wmata.com/rider_tools/pids/showpid.cfm?station_id=107",
+                "url": "https://en.wikipedia.org/wiki/Kensington,_Victoria",
                 "lines": [
                     "Green"
                 ],
@@ -91,10 +91,10 @@
             },
             "type": "Feature",
             "properties": {
-                "description": "Melbourne",
+                "description": "Population: 135,959",
                 "marker-symbol": "rail-metro",
                 "title": "Melbourne",
-                "url": "http://www.wmata.com/rider_tools/pids/showpid.cfm?station_id=68",
+                "url": "https://www.melbourne.vic.gov.au/about-melbourne/melbourne-profile/suburbs/pages/melbourne.aspx",
                 "lines": [
                     "Orange"
                 ],
@@ -111,10 +111,10 @@
             },
             "type": "Feature",
             "properties": {
-                "description": "North Melbourne",
+                "description": "Population: 14,940",
                 "marker-symbol": "rail-metro",
                 "title": "North Melbourne",
-                "url": "http://www.wmata.com/rider_tools/pids/showpid.cfm?station_id=68",
+                "url": "https://en.wikipedia.org/wiki/North_Melbourne,_Victoria",
                 "lines": [
                     "Orange"
                 ],
@@ -131,10 +131,10 @@
             },
             "type": "Feature",
             "properties": {
-                "description": "Parkville",
+                "description": "Population: 7,409",
                 "marker-symbol": "rail-metro",
                 "title": "Parkville",
-                "url": "http://www.wmata.com/rider_tools/pids/showpid.cfm?station_id=68",
+                "url": "https://en.wikipedia.org/wiki/Parkville,_Victoria",
                 "lines": [
                     "Orange"
                 ],
@@ -151,10 +151,10 @@
             },
             "type": "Feature",
             "properties": {
-                "description": "Port Melbourne",
+                "description": "Population: 16,175",
                 "marker-symbol": "rail-metro",
                 "title": "Port Melbourne",
-                "url": "http://www.wmata.com/rider_tools/pids/showpid.cfm?station_id=68",
+                "url": "https://en.wikipedia.org/wiki/Port_Melbourne,_Victoria",
                 "lines": [
                     "Orange"
                 ],
@@ -171,10 +171,10 @@
             },
             "type": "Feature",
             "properties": {
-                "description": "Southbank",
+                "description": "Population: 18,709",
                 "marker-symbol": "rail-metro",
                 "title": "Southbank",
-                "url": "http://www.wmata.com/rider_tools/pids/showpid.cfm?station_id=68",
+                "url": "https://en.wikipedia.org/wiki/Southbank,_Victoria",
                 "lines": [
                     "Orange"
                 ],
@@ -191,10 +191,10 @@
             },
             "type": "Feature",
             "properties": {
-                "description": "South Yarra",
+                "description": "Population: 24,171",
                 "marker-symbol": "rail-metro",
                 "title": "South Yarra",
-                "url": "http://www.wmata.com/rider_tools/pids/showpid.cfm?station_id=68",
+                "url": "https://en.wikipedia.org/wiki/South_Yarra,_Victoria",
                 "lines": [
                     "Orange"
                 ],
@@ -211,10 +211,10 @@
             },
             "type": "Feature",
             "properties": {
-                "description": "Flemington",
+                "description": "Population: 7,719",
                 "marker-symbol": "rail-metro",
                 "title": "Flemington",
-                "url": "http://www.wmata.com/rider_tools/pids/showpid.cfm?station_id=68",
+                "url": "https://en.wikipedia.org/wiki/Flemington,_Victoria",
                 "lines": [
                     "Orange"
                 ],
