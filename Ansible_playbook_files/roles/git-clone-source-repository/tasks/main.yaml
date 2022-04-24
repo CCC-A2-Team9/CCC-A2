@@ -2,7 +2,7 @@
 - name: add github ssh key
   copy:
     src: "config/GitHubKey.pem"
-    dest: /home/ubuntu/.ssh/GitHubKey
+    dest: /home/ubuntu/.ssh/id_rsa
     owner: ubuntu
     group: ubuntu
     mode: 0600
