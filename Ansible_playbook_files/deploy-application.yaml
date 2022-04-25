@@ -5,8 +5,7 @@
     - host_vars/config.yaml
   gather_facts: true
   roles:
-    - role: git-pull-source-repository
-    - role: deploy-backend-server
+    - role: deploy-backend
 
 #deploy frontend
 - hosts: frontend
@@ -14,7 +13,6 @@
     - host_vars/config.yaml
   gather_facts: true
   roles:
-    - role: git-pull-source-repository
     - role: deploy-frontend
 
 #deploy database and crawler
@@ -31,13 +29,6 @@
   gather_facts: true
   roles:
     - role: deploy-couchdb-cluster
-
-- hosts: crawler
-  vars_files:
-     - host_vars/config.yaml
-  gather_facts: true
-  roles:
-    - role: git-pull-source-repository
 
 - hosts: crawler
   gather_facts: true
