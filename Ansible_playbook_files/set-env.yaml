@@ -14,9 +14,7 @@
   roles:
      - role: add-proxy
      - role: install-dependencies
-     - role: install-docker
-     - role: setup-docker
+     - role: docker-install
+     - role: docker-setup
      - role: git-clone-source-repository
      - role: mount-volumes
-
-#host_vars/config 部分信息未完成
