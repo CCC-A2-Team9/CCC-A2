@@ -13,7 +13,7 @@
 
   roles:
      - role: add-proxy
-     - role: install-dependencies
+     - role: install-dependency
      - role: docker-install
      - role: docker-setup
      - role: git-clone-source-repository
