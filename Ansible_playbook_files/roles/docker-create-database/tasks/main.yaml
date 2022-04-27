@@ -1,0 +1,31 @@
+---
+- name: Check if couchdb is created
+  become: yes
+  uri:
+    url: http://127.0.0.1:5984
+
+
+- debug:
+    msg: "Couchdb is established"
+
+
+
+- name: create a database "scienrio1"
+  become: yes
+  uri:
+    url: http://{{couchdb_user}}:{{couchdb_password}}@localhost:5984/scienrio1
+    method: PUT
+    force_basic_auth: yes
+    status_code: 201,412
+
+- name: create a database "scienrio2"
+  become: yes
+  uri:
+    url: http://{{couchdb_user}}:{{couchdb_password}}@localhost:5984/scienrio2
+    method: PUT
+    force_basic_auth: yes
+    status_code: 201,412
+
+
+- debug:
+    msg: "A database called scienrio is created"

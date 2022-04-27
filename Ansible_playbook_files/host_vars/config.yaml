@@ -13,3 +13,8 @@ couchdb_password: admin
 cluster_name: 'mycluster'
 couchdb_container_name: 'mycouchdb'
 couchdb_port: 5984
+# proxy
+proxy: http://wwwproxy.unimelb.edu.au:8000/
+# Settings
+env_vars:
+  couchdb: http://example.com
