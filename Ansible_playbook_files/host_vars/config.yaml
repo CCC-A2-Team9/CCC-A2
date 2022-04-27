@@ -9,8 +9,7 @@ repository_name: comp90024-project2
 git_repo: /home/ubuntu/COMP90024/comp90024-project2
 couchdb_image: couchdb:latest
 couchdb_user: admin
-couchdb_pass: admin
+couchdb_password: admin
 cluster_name: 'mycluster'
 couchdb_container_name: 'mycouchdb'
 couchdb_port: 5984
-couchdb_db_name: "live-tweets"

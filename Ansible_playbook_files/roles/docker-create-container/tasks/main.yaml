@@ -1,0 +1,29 @@
+---
+
+- name: Create a docker container from existing couchdb image
+  become: yes
+  docker_container:
+    name: mycouchdb
+    image: couchdb:latest
+    env:
+      COUCHDB_USER: "admin"
+      COUCHDB_PASSWORD: "admin"
+    ports:
+      - "5984:5984"
+    timeout: 300
+    state: started
+    # volumes:
+    #   - /home/ubuntu/couchdb:/opt/couchdb/data
+    networks:
+      - name: net-aio
+
+
+
+- name: Show all the containers
+  become: yes
+  shell: docker ps -a
+  register: showallcontainers
+
+
+- debug:
+    var: showallcontainers
