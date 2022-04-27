@@ -7,13 +7,10 @@ remote_working_directory: /home/ubuntu/COMP90024
 remote_working_directory_big_data: /home/ubuntu/COMP90024/COMP90024
 repository_name: comp90024-project2
 git_repo: /home/ubuntu/COMP90024/comp90024-project2
-# couchdb_image: 
-# couchdb_user: admin
-# couchdb_pass: admin
-# couchdb_VERSION: '3.0.0'
-# couchdb_cookie: 
-# couchdb_uuid: 
-# cluster_name: 
-# couchdb_container_name: 
-# couchdb_port: 5984
-# couchdb_db_name: 
+couchdb_image: couchdb:latest
+couchdb_user: admin
+couchdb_pass: admin
+cluster_name: 'mycluster'
+couchdb_container_name: 'mycouchdb'
+couchdb_port: 5984
+couchdb_db_name: "live-tweets"
