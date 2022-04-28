@@ -1,18 +1,19 @@
 ---
 #deploy database and crawler
-- hosts: database
+- hosts: backfrontend
   vars_files:
     - host_vars/config.yaml
   gather_facts: true
   roles:
-    - role: deploy-couchdb
+    - role: deploy-frontend
+    - role: deploy-backend
 
-- hosts: crawler
+- hosts: worker
   vars_files:
     - host_vars/config.yaml
   gather_facts: true
   roles:
-    - role: deploy-couchdb-cluster
+    - role: deploy-crawler
 
 
 # - hosts: crawler
