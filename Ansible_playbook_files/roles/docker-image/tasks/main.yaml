@@ -9,5 +9,5 @@
 - name: Pull an image called test
   become: yes
   docker_image:
-    name: '{{ dockerhub_pulling_image }}'
+    name: couchdb
     source: pull
