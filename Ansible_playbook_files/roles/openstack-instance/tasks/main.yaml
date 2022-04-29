@@ -1,6 +1,5 @@
 # COMP90024 Project2 Team9
 
-################################## For Backend_instances ################################# 
 # Create instances for backend on NeCTAR
 - name: Create an instance
   openstack.cloud.server:
@@ -40,9 +39,3 @@
   loop: '{{ os_instance.results }}'
   when: item.openstack is defined            
 
-        
-# - name: create file
-#   become: yes
-#   template:
-#     src: host_ansible.j2
-#     dest: "{{ wm_inventory_file }}"

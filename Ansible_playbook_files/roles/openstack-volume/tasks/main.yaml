@@ -1,7 +1,7 @@
 # COMP90024 Project2 Team9
 
 # Create volumes from vars
-- name: Create volume(s) on NeCTAR
+- name: Create volume(s) on Mectar
   os_volume:
     display_name: '{{ item.vol_name }}'
     size: '{{ item.vol_size }}'
