@@ -11,9 +11,9 @@
     yes
   shell: docker-compose down --rmi local
   args:
-    chdir: /home/ubuntu/COMP90024/comp90024-project2/frontend
+    chdir: /home/ubuntu/COMP90024/CCC-A2/frontend
 
 - name: Start server
   shell: docker-compose up -d --build
   args:
-    chdir: /home/ubuntu/COMP90024/comp90024-project2/frontend
+    chdir: /home/ubuntu/COMP90024/CCC-A2/frontend
