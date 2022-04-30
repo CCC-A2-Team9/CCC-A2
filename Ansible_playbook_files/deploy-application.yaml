@@ -1,6 +1,6 @@
 ---
 #deploy database and crawler
-- hosts: backfrontend
+- hosts: masternode
   vars_files:
     - host_vars/config.yaml
   gather_facts: true
@@ -16,14 +16,14 @@
 #     - role: deploy-crawler
 
 
-# - hosts: crawler
+# - hosts: masternode
 #   gather_facts: true
 #   vars_files:
 #     - host_vars/config.yaml
 #   roles:
 #     - role: deploy-crawler
 
-# #deploy backend
+# #deploy masternode
 # - hosts: backend
 #   vars_files:
 #     - host_vars/config.yaml
@@ -31,7 +31,7 @@
 #   roles:
 #     - role: deploy-backend
 
-# #deploy frontend
+# #deploy masternode
 # - hosts: frontend
 #   vars_files:
 #     - host_vars/config.yaml
