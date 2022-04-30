@@ -42,7 +42,7 @@ security_groups:
 # ****************************** Volume ******************************
 volumes:
   - vol_name: instance1-volume
-    vol_size: 200
+    vol_size: 50
     device: /dev/vdb
     mountpoint: /data
   - vol_name: instance2-volume
@@ -54,7 +54,7 @@ volumes:
     device: /dev/vdb
     mountpoint: /data
   - vol_name: instance4-volume
-    vol_size: 50
+    vol_size: 200
     device: /dev/vdb
     mountpoint: /data
 
