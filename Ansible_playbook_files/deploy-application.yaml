@@ -6,14 +6,14 @@
   gather_facts: true
   roles:
     - role: deploy-frontend
-    - role: deploy-backend
+#     - role: deploy-backend
 
-- hosts: worker
-  vars_files:
-    - host_vars/config.yaml
-  gather_facts: true
-  roles:
-    - role: deploy-crawler
+# - hosts: worker
+#   vars_files:
+#     - host_vars/config.yaml
+#   gather_facts: true
+#   roles:
+#     - role: deploy-crawler
 
 
 # - hosts: crawler
