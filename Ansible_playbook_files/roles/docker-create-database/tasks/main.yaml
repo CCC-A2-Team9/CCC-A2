@@ -10,22 +10,14 @@
 
 
 
-- name: create a database "scienrio1"
+- name: create a database "all_tweets"
   become: yes
   uri:
-    url: http://{{couchdb_user}}:{{couchdb_password}}@localhost:5984/scienrio1
-    method: PUT
-    force_basic_auth: yes
-    status_code: 201,412
-
-- name: create a database "scienrio2"
-  become: yes
-  uri:
-    url: http://{{couchdb_user}}:{{couchdb_password}}@localhost:5984/scienrio2
+    url: http://{{couchdb_user}}:{{couchdb_password}}@localhost:5984/all_tweets
     method: PUT
     force_basic_auth: yes
     status_code: 201,412
 
 
 - debug:
-    msg: "A database called scienrio is created"
+    msg: "A database called all_tweets is created"
