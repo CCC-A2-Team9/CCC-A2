@@ -1,0 +1,225 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.970,
+                    -37.780
+                ]
+            },
+            "type": "Feature",
+            "properties": {
+                "description": "Population: 18,535 ",
+                "marker-symbol": "rail-metro",
+                "title": "Carlton",
+                "url": "https://en.wikipedia.org/wiki/Carlton,_Victoria",
+                "lines": [
+                    "Green"
+                ],
+                "address": "Carlton, VIC"
+            }
+        },
+        {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.950,
+                    -37.810
+                ]
+            },
+            "type": "Feature",
+            "properties": {
+                "description": "Population: 10,964",
+                "marker-symbol": "rail-metro",
+                "title": "Docklands",
+                "url": "https://en.wikipedia.org/wiki/Docklands,_Victoria7",
+                "lines": [
+                    "Green"
+                ],
+                "address": "Docklands, VIC"
+            }
+        },
+        {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.990,
+                    -37.820
+                ]
+            },
+            "type": "Feature",
+            "properties": {
+                "description": "Population: 4,964",
+                "marker-symbol": "rail-metro",
+                "title": "East Melbourne",
+                "url": "https://en.wikipedia.org/wiki/East_Melbourne,_Victoria",
+                "lines": [
+                    "Green"
+                ],
+                "address": "East Melbourne, VIC"
+            }
+        },
+        {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.930,
+                    -37.790
+                ]
+            },
+            "type": "Feature",
+            "properties": {
+                "description": "Population: 10,812",
+                "marker-symbol": "rail-metro",
+                "title": "Kensington",
+                "url": "https://en.wikipedia.org/wiki/Kensington,_Victoria",
+                "lines": [
+                    "Green"
+                ],
+                "address": "Kensington, VIC"
+            }
+        },
+        {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.770,
+                    -38.370
+                ]
+            },
+            "type": "Feature",
+            "properties": {
+                "description": "Population: 135,959",
+                "marker-symbol": "rail-metro",
+                "title": "Melbourne",
+                "url": "https://www.melbourne.vic.gov.au/about-melbourne/melbourne-profile/suburbs/pages/melbourne.aspx",
+                "lines": [
+                    "Orange"
+                ],
+                "address": "Melbourne, VIC"
+            }
+        },
+        {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.060,
+                    -37.910
+                ]
+            },
+            "type": "Feature",
+            "properties": {
+                "description": "Population: 14,940",
+                "marker-symbol": "rail-metro",
+                "title": "North Melbourne",
+                "url": "https://en.wikipedia.org/wiki/North_Melbourne,_Victoria",
+                "lines": [
+                    "Orange"
+                ],
+                "address": "North Melbourne, VIC"
+            }
+        },
+        {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.960,
+                    -37.800
+                ]
+            },
+            "type": "Feature",
+            "properties": {
+                "description": "Population: 7,409",
+                "marker-symbol": "rail-metro",
+                "title": "Parkville",
+                "url": "https://en.wikipedia.org/wiki/Parkville,_Victoria",
+                "lines": [
+                    "Orange"
+                ],
+                "address": "Parkville, VIC"
+            }
+        },
+        {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.890,
+                    -37.850
+                ]
+            },
+            "type": "Feature",
+            "properties": {
+                "description": "Population: 16,175",
+                "marker-symbol": "rail-metro",
+                "title": "Port Melbourne",
+                "url": "https://en.wikipedia.org/wiki/Port_Melbourne,_Victoria",
+                "lines": [
+                    "Orange"
+                ],
+                "address": "Port Melbourne, VIC"
+            }
+        },
+        {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.970,
+                    -37.820
+                ]
+            },
+            "type": "Feature",
+            "properties": {
+                "description": "Population: 18,709",
+                "marker-symbol": "rail-metro",
+                "title": "Southbank",
+                "url": "https://en.wikipedia.org/wiki/Southbank,_Victoria",
+                "lines": [
+                    "Orange"
+                ],
+                "address": "Southbank, VIC"
+            }
+        },
+        {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.060,
+                    -36.990
+                ]
+            },
+            "type": "Feature",
+            "properties": {
+                "description": "Population: 24,171",
+                "marker-symbol": "rail-metro",
+                "title": "South Yarra",
+                "url": "https://en.wikipedia.org/wiki/South_Yarra,_Victoria",
+                "lines": [
+                    "Orange"
+                ],
+                "address": "South Yarra, VIC"
+            }
+        },
+        {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.930,
+                    -37.790
+                ]
+            },
+            "type": "Feature",
+            "properties": {
+                "description": "Population: 7,719",
+                "marker-symbol": "rail-metro",
+                "title": "Flemington",
+                "url": "https://en.wikipedia.org/wiki/Flemington,_Victoria",
+                "lines": [
+                    "Orange"
+                ],
+                "address": "Flemington, VIC"
+            }
+        }
+    ]
+}

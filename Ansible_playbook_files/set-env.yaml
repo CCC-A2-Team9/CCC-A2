@@ -1,0 +1,52 @@
+---
+- hosts: localhost
+  gather_facts: true
+
+  roles:
+    - role: add-NectarGroupKey
+
+- hosts: couch
+  vars_files:
+    - host_vars/config.yaml
+    - host_vars/nectar.yaml
+  gather_facts: true
+
+  roles:
+     - role: add-proxy
+     - role: install-dependency
+     - role: docker-install
+     - role: docker-setup 
+     - role: docker-network
+     - role: docker-image
+     - role: docker-create-container
+     - role: docker-create-database
+     - role: git-clone-source-repository
+     - role: mount-volumes
+
+- hosts: backfrontend
+  vars_files:
+    - host_vars/config.yaml
+    - host_vars/nectar.yaml
+  gather_facts: true
+
+  roles:
+     - role: add-proxy
+     - role: install-dependency
+     - role: docker-install
+     - role: docker-setup 
+     - role: git-clone-source-repository
+     - role: mount-volumes
+  
+- hosts: worker
+  vars_files:
+    - host_vars/config.yaml
+    - host_vars/nectar.yaml
+  gather_facts: true
+
+  roles:
+    - role: add-proxy
+    - role: install-dependency
+    - role: docker-install
+    - role: docker-setup 
+    - role: git-clone-source-repository
+    - role: mount-volumes
