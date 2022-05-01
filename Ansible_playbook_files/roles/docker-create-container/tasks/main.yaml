@@ -9,7 +9,7 @@
       COUCHDB_USER: "{{ couchdb_user }}"
       COUCHDB_PASSWORD: "{{ couchdb_password }}"
     ports:
-      - - "{{couchdb_port}}:{{couchdb_port}}"
+      - "5984:5984"
     timeout: 300
     state: started
     # volumes:
