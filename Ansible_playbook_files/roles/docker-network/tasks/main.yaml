@@ -6,10 +6,10 @@
 #     password: '{{ dockerhub_password }}'
 
 
-- name: Create docker network called net-aio
+- name: Create docker network called doc-net
   become: yes
   docker_network:
-    name: net-aio
+    name: doc-net
   
 
 
