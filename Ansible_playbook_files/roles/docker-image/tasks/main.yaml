@@ -1,12 +1,5 @@
-# ---
-# - name: Log into a personal DockerHub
-#   become: yes
-#   docker_login:
-#     username: '{{ dockerhub_username }}'
-#     password: '{{ dockerhub_password }}'
-
-
-- name: Pull an image called test
+---
+- name: Pull an image
   become: yes
   docker_image:
     name: couchdb

@@ -1,11 +1,4 @@
-# ---
-# - name: Log into a personal DockerHub
-#   become: yes
-#   docker_login:
-#     username: '{{ dockerhub_username }}'
-#     password: '{{ dockerhub_password }}'
-
-
+---
 - name: Create docker network called doc-net
   become: yes
   docker_network:

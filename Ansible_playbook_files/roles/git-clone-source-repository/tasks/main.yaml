@@ -27,7 +27,3 @@
   args:
     chdir: '{{ remote_working_directory }}'
 
-# - name: Remove id_rsa
-#   file:
-#     path: /home/ubuntu/.ssh/id_rsa
-#     state: absent
