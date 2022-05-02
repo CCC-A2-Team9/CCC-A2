@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="Dashboard">
   <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-  <title>Team9 - COMP90024PROJECT2</title>
+  <title>Team9 - dsPROJECT2</title>
 
   <!-- Favicons -->
   <link href="img/teamlogo.png" rel="icon">
@@ -45,7 +45,7 @@
         <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
       </div>
       <!--logo start-->
-      <a href="index.html" class="logo"><b>COMP90024<span>Project2</span></b></a>
+      <a href="index.html" class="logo"><b>ds<span>Project2</span></b></a>
       <!--logo end-->
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
@@ -63,7 +63,7 @@
         <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
       </div>
       <!--logo start-->
-      <a href="index.html" class="logo"><b>COMP90024<span>Project2</span></b></a>
+      <a href="index.html" class="logo"><b>ds<span>Project2</span></b></a>
       <!--logo end-->
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
@@ -130,10 +130,8 @@
             <h2 contenteditable="true">Introduction</h2>
           </div>
           <div class="col-md-6">
-            <p contenteditable="true" class="mt">Later, when we reached the city, and glanced down the chief avenue, smouldering in its crushed-strawberry tint, those splendid effects were repeated; for every balcony, and every fanciful bird-cage of a snuggery countersunk in the house-fronts,
-              and all the long lines of roofs were crowded with people, and each crowd was an explosion of brilliant color.</p>
-            <p contenteditable="true">For color, and picturesqueness, and novelty, and outlandishness, and sustained interest and fascination, it was the most satisfying show I had ever seen, and I suppose I shall not have the privilege of looking upon its like again.</p>
-
+              <p contenteditable="true" class="mt">As for scenario 1, we try to explore whether the the number of employed people in Melbourne on AURIN is positively correlated with the number of tweets that talk about recruitment with a positive attitude.</p>
+              <p contenteditable="true">The main reason for choosing this scenario is that employment is one of the most important metrics people are concerned about when they plan and decide to settle down somewhere via considering livability.</p>
           </div>
         </div>
         <div class="mt"></div>
@@ -142,7 +140,7 @@
             <h2 contenteditable="true">Hypothesis</h2>
           </div>
           <div class="col-md-6">
-            <p contenteditable="true" class="mt">For the 11 suburbs in the city of Melbourne, the number of recruitment tweets about real estate is positively correlated with the number of real estate employment from AURIN.</p>
+            <p contenteditable="true" class="mt">For the 11 suburbs in the city of Melbourne, the number of recruitment tweets towards a positive attitude is positively correlated with the number of employed people from AURIN.</p>
           </div>
         </div>
         
@@ -150,7 +148,7 @@
           <div class="col-sm-12">
             <section class="panel">
               <header class="panel-heading">
-                <input type="button" class="btn btn-theme02" value="Update Data" onclick="GetAjax()">
+                <!-- <input type="button" class="btn btn-theme02" value="Update Data" onclick="GetAjax()"> -->
                 <h5>Map with Loaction List and corresponding Population</h5>
               </header>
               <div class="panel-body">
@@ -164,7 +162,7 @@
           <div class="row mt">
             <div class="col-lg-6">
               <div class="content-panel">
-                <h4><i class="fa fa-angle-right"></i> Histogram of the number of tweets about hiring real estate-related employees</h4>
+                <h4><i class="fa fa-angle-right"></i> Histogram of the percentage of tweets that talk about recruitment towards a positive attitude.</h4>
                 <div class="panel-body">
                   <div id="hero-bar" class="graph"></div>
                 </div>
@@ -174,7 +172,7 @@
           <div class="row mt">
             <div class="col-lg-6">
               <div class="content-panel">
-                <h4><i class="fa fa-angle-right"></i> Pie chart of the percentage of people employed in real estate in each suburb (AURIN) </h4>
+                <h4><i class="fa fa-angle-right"></i> Pie chart of the percentage of the number of employed people in each suburb.(AURIN) </h4>
                 <div class="panel-body">
                  <div id="hero-donut" class="graph"></div>
                 </div>
@@ -185,9 +183,9 @@
             <div class="col-lg-6">
               <div class="content-panel">
                 <h4><i class="fa fa-angle-right"></i> Regression Result </h4>
-                <h4> <center> y=15x+3 </center> </h4>
-                <h4> y = the number of people employed in real estate</h4>
-                <h4> x = the number of tweets about hiring real estate-related employees</h4>
+                <h4> <center> y=0.117035x+0.001543 </center> </h4>
+                <h4> y = the percentage of the number of employed people </h4>
+                <h4> x = the percentage of tweets that talk about recruitment towards a positive attitude <h4>
                 <div class="panel-body">
                   <div id="hero-graph" class="graph"></div>
                 </div>
@@ -195,26 +193,17 @@
             </div>
           </div>
         </div>
-        <!-- <div class="row mt">
-          <div class="col-lg-6">
-            <div class="content-panel">
-              <h4><i class="fa fa-angle-right"></i> Regression 2</h4>
-              <div class="panel-body">
-                <div id="hero-area" class="graph"></div>
-              </div>
-            </div>
-          </div>
-        </div> -->
         
         <div class="mt"></div>
         <div class="row content-panel mt mb">
-          <div class="col-md-6 mt">
-            <h2 contenteditable="true">Results</h2>
-            <blockquote contenteditable="true">A bird sitting on a tree is never afraid of the branch breaking, because her trust is not in the branch, but in her own wings.</blockquote>
+          <div class="col-md-6">
+            <h2 contenteditable="true"> Conclusion </h2>
           </div>
-          <div class="col-md-6 mt">
-            <blockquote contenteditable="true">Gossip is started by the insecure, spread by fools, and accepted by idiots. Don't be any of the three.</blockquote>
+          <div class="col-md-6">
+            <p contenteditable="true" class="mt"> For the 11 suburbs in the city of Melbourne, the number of recruitment tweets towards a positive attitude is positively correlated with the number of employed people from AURIN.</p>
           </div>
+        </div>
+
         </div>
       <!-- /MAIN CONTENT -->
       <!--main content end-->
@@ -259,16 +248,7 @@
   <script src="lib/morris-conf1.js"></script>
   <script src="lib/raphael/raphael.min.js"></script>
   <script src="lib/morris/morris.min.js"></script>
-  <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script> -->
 
-
-
-    <!-- Main -->
-    <!-- <main class="pt-2">
-        <div class="container">
-            <div id="map"></div>
-        </div>
-    </main> -->
 
     <script>
         mapboxgl.accessToken = 'pk.eyJ1IjoiamFzbXluenoiLCJhIjoiY2wyOGs3c24yMGE2NjNjcjRuanhnZnFwNyJ9.VbndD4nH-NUhv00plSB13w';
@@ -340,8 +320,8 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    144.930,
-                    -37.790
+                    144.940,
+                    -37.800
                 ]
             },
             "type": "Feature",
@@ -523,47 +503,71 @@
               )
               .addTo(map);
             }
-
-        // Load the data from backend
-        function GetAjax(){
-            $.ajax({
-                url:"http://127.0.0.1:5000/dataFromAjax",
-                Type: "GET",
-                dataType: "JSON",
-                success:function(data){
-                    alert("Name: " + data.name + "Age: " + data.age)
-                },
-                error:function(){
-                    alert("fail...")
-                }
+    
+      
+      // Fetch the real-time data from back-end
+      var json_tweet_data = (function() {
+        var json_data = null;
+        $.ajax({
+          async: false,
+          url:"http://127.0.0.1:5000/dataFromAjax",
+          dataType: "json",
+          Type: "GET",
+          success: function (data) {
+            // alert('Successfully updated!');
+            json_data = data;
+        },
+          error:function(){
+            alert("fail...");
+            // For error handling 
+            Morris.Bar({
+              element: 'hero-bar',
+              data: [
+                {suburb: 'Carlton', positive_tweet: 0.9},
+                {suburb: 'Docklands', positive_tweet: 0.8},
+                {suburb: 'East Melbourne', positive_tweet: 0.7},
+                {suburb: 'Kensington', positive_tweet: 0.6},
+                {suburb: 'Melbourne', positive_tweet: 0.9},
+                {suburb: 'North Melbourne', positive_tweet: 0.7},
+                {suburb: 'Parkvile',positive_tweet: 0.8},
+                {suburb: 'Port Melbourne', positive_tweet: 0.2},
+                {suburb: 'Southbank', positive_tweet: 0.6},
+                {suburb: 'South Yarra', positive_tweet: 0.5},
+                {suburb: 'Flemington', positive_tweet: 0.4},
+              ],
+              xkey: 'suburb',
+              ykeys: ['positive_tweet'],
+              labels: ['The percentage of tweets towards positive attitude'],
+              barRatio: 0.4,
+              xLabelAngle: 35,
+              hideHover: 'auto',
+              barColors: ['#ac92ec']
             });
-        }
+          }
+        });
+        return json_data;
+      })();
 
-        // Histogram
-        Morris.Bar({
+      // Change the data format we loaded.
+      var list_json=[];
+        for (var key in json_tweet_data){
+          list_json.push({"suburb":key,"positive_tweet":json_tweet_data[key]})
+        }
+        console.log(list_json);
+
+      // Histogram
+      Morris.Bar({
         element: 'hero-bar',
-        data: [
-          {suburb: 'Carlton', tweets: 136},
-          {suburb: 'Docklands', tweets: 137},
-          {suburb: 'East Melbourne', tweets: 275},
-          {suburb: 'Kensington', tweets: 380},
-          {suburb: 'Melbourne', tweets: 655},
-          {suburb: 'North Melbourne', tweets: 1571},
-          {suburb: 'Parkvile',tweets: 1572},
-          {suburb: 'Port Melbourne', tweets: 1541},
-          {suburb: 'Southbank', tweets: 1571},
-          {suburb: 'South Yarra', tweets: 1521},
-          {suburb: 'Flemington', tweets: 1511},
-        ],
+        data: list_json,
         xkey: 'suburb',
-        ykeys: ['tweets'],
-        labels: ['The num of tweets'],
+        ykeys: ["positive_tweet"],
+        labels: ['The percentage of tweets towards positive attitude'],
         barRatio: 0.4,
         xLabelAngle: 35,
         hideHover: 'auto',
         barColors: ['#ac92ec']
       });
-
+      
     </script>
 
 </body>

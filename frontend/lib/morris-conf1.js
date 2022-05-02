@@ -27,17 +27,17 @@ var Script = function () {
       Morris.Donut({
         element: 'hero-donut',
         data: [
-          {label: 'Carlton', value: 7.2 },
-          {label: 'Docklands', value: 8.1 },
-          {label: 'East Melbourne', value: 2.5 },
-          {label: 'Kensington', value: 6.2 },
-          {label: 'Melbourne', value: 26.5 },
-          {label: 'North Melbourne', value: 9.3 },
-          {label: 'Parkvile', value: 2.4 },
-          {label: 'Port Melbourne', value: 12.2 },
-          {label: 'Southbank', value: 15.8 },
-          {label: 'South Yarra', value: 5.1 },
-          {label: 'Flemington', value: 4.7 }
+          {label: 'Carlton', value: 8.0 },
+          {label: 'Docklands', value: 6.6 },
+          {label: 'East Melbourne', value: 3.2 },
+          {label: 'Kensington', value: 6.6},
+          {label: 'Melbourne', value: 21.8 },
+          {label: 'North Melbourne', value: 11.4 },
+          {label: 'Parkvile', value: 3.2 },
+          {label: 'Port Melbourne', value: 9.9 },
+          {label: 'Southbank', value: 11.5 },
+          {label: 'South Yarra - East', value: 12.7 },
+          {label: 'Flemington', value: 5.2 }
         ],
           // colors: ['#3498db', '#2980b9', '#34495e'],
         formatter: function (y) { return y + "%" }

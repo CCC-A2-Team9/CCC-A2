@@ -26,18 +26,19 @@ var Script = function () {
 
       Morris.Donut({
         element: 'hero-donut',
-        data: [
-          {label: 'Carlton', value: 9.4 },
-          {label: 'Docklands', value: 6.4 },
+        data: 
+        [
+          {label: 'Carlton', value: 9.8 },
+          {label: 'Docklands', value: 6.3 },
           {label: 'East Melbourne', value: 3.8 },
-          {label: 'Kensington', value: 5.7 },
-          {label: 'Melbourne', value: 22.1 },
-          {label: 'North Melbourne', value: 11.7 },
-          {label: 'Parkvile', value: 4.8 },
-          {label: 'Port Melbourne', value: 6.7 },
-          {label: 'Southbank', value: 12.9 },
-          {label: 'South Yarra', value: 11.8 },
-          {label: 'Flemington', value: 4.6 }
+          {label: 'Kensington', value: 6.1 },
+          {label: 'Melbourne', value: 21.8 },
+          {label: 'North Melbourne', value: 11.5 },
+          {label: 'Parkvile', value: 4.9 },
+          {label: 'Port Melbourne', value: 6.9 },
+          {label: 'Southbank', value: 12.6 },
+          {label: 'South Yarra - East', value: 11.6 },
+          {label: 'Flemington', value: 4.7 }
         ],
           // colors: ['#3498db', '#2980b9', '#34495e'],
         formatter: function (y) { return y + "%" }
@@ -69,29 +70,29 @@ var Script = function () {
       //     smooth: true
       // });
 
-      Morris.Bar({
-        element: 'hero-bar',
-        data: [
-          {suburb: 'Carlton', tweets: 136},
-          {suburb: 'Docklands', tweets: 137},
-          {suburb: 'East Melbourne', tweets: 75},
-          {suburb: 'Kensington', tweets: 380},
-          {suburb: 'Melbourne', tweets: 655},
-          {suburb: 'North Melbourne', tweets: 1571},
-          {suburb: 'Parkvile',tweets: 1572},
-          {suburb: 'Port Melbourne', tweets: 1541},
-          {suburb: 'Southbank', tweets: 151},
-          {suburb: 'South Yarra', tweets: 521},
-          {suburb: 'Flemington', tweets: 111},
-        ],
-        xkey: 'suburb',
-        ykeys: ['tweets'],
-        labels: ['The num of tweets'],
-        barRatio: 0.4,
-        xLabelAngle: 35,
-        hideHover: 'auto',
-        barColors: ['#ac92ec']
-      });
+      // Morris.Bar({
+      //   element: 'hero-bar',
+      //   data: [
+      //     {suburb: 'Carlton', tweets: 136},
+      //     {suburb: 'Docklands', tweets: 137},
+      //     {suburb: 'East Melbourne', tweets: 75},
+      //     {suburb: 'Kensington', tweets: 380},
+      //     {suburb: 'Melbourne', tweets: 655},
+      //     {suburb: 'North Melbourne', tweets: 1571},
+      //     {suburb: 'Parkvile',tweets: 1572},
+      //     {suburb: 'Port Melbourne', tweets: 1541},
+      //     {suburb: 'Southbank', tweets: 151},
+      //     {suburb: 'South Yarra', tweets: 521},
+      //     {suburb: 'Flemington', tweets: 111},
+      //   ],
+      //   xkey: 'suburb',
+      //   ykeys: ['tweets'],
+      //   labels: ['The num of tweets'],
+      //   barRatio: 0.4,
+      //   xLabelAngle: 35,
+      //   hideHover: 'auto',
+      //   barColors: ['#ac92ec']
+      // });
 
       // new Morris.Line({
       //   element: 'examplefirst',

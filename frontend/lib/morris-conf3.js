@@ -28,16 +28,16 @@ var Script = function () {
         element: 'hero-donut',
         data: [
           {label: 'Carlton', value: 5.6},
-          {label: 'Docklands', value: 8.9 },
-          {label: 'East Melbourne', value: 11.8 },
-          {label: 'Kensington', value: 11.9 },
+          {label: 'Docklands', value: 9.5 },
+          {label: 'East Melbourne', value: 11.9 },
+          {label: 'Kensington', value: 11.4 },
           {label: 'Melbourne', value: 4.0 },
-          {label: 'North Melbourne', value: 7.9 },
+          {label: 'North Melbourne', value: 7.6 },
           {label: 'Parkvile', value: 7.7 },
-          {label: 'Port Melbourne', value: 13.4 },
-          {label: 'Southbank', value: 8.7 },
-          {label: 'South Yarra', value: 11.0 },
-          {label: 'Flemington', value: 9.2 }
+          {label: 'Port Melbourne', value: 13.2 },
+          {label: 'Southbank', value: 9.7 },
+          {label: 'South Yarra - East', value: 10.7 },
+          {label: 'Flemington', value: 8.6 }
         ],
           // colors: ['#3498db', '#2980b9', '#34495e'],
         formatter: function (y) { return y + "%" }
@@ -69,29 +69,29 @@ var Script = function () {
       //     smooth: true
       // });
 
-      Morris.Bar({
-        element: 'hero-bar',
-        data: [
-          {suburb: 'Carlton', tweets: 136},
-          {suburb: 'Docklands', tweets: 137},
-          {suburb: 'East Melbourne', tweets: 75},
-          {suburb: 'Kensington', tweets: 380},
-          {suburb: 'Melbourne', tweets: 655},
-          {suburb: 'North Melbourne', tweets: 1571},
-          {suburb: 'Parkvile',tweets: 1572},
-          {suburb: 'Port Melbourne', tweets: 1541},
-          {suburb: 'Southbank', tweets: 151},
-          {suburb: 'South Yarra', tweets: 521},
-          {suburb: 'Flemington', tweets: 111},
-        ],
-        xkey: 'suburb',
-        ykeys: ['tweets'],
-        labels: ['The num of tweets'],
-        barRatio: 0.4,
-        xLabelAngle: 35,
-        hideHover: 'auto',
-        barColors: ['#ac92ec']
-      });
+      // Morris.Bar({
+      //   element: 'hero-bar',
+      //   data: [
+      //     {suburb: 'Carlton', tweets: 136},
+      //     {suburb: 'Docklands', tweets: 137},
+      //     {suburb: 'East Melbourne', tweets: 75},
+      //     {suburb: 'Kensington', tweets: 380},
+      //     {suburb: 'Melbourne', tweets: 655},
+      //     {suburb: 'North Melbourne', tweets: 1571},
+      //     {suburb: 'Parkvile',tweets: 1572},
+      //     {suburb: 'Port Melbourne', tweets: 1541},
+      //     {suburb: 'Southbank', tweets: 151},
+      //     {suburb: 'South Yarra', tweets: 521},
+      //     {suburb: 'Flemington', tweets: 111},
+      //   ],
+      //   xkey: 'suburb',
+      //   ykeys: ['tweets'],
+      //   labels: ['The num of tweets'],
+      //   barRatio: 0.4,
+      //   xLabelAngle: 35,
+      //   hideHover: 'auto',
+      //   barColors: ['#ac92ec']
+      // });
 
       // new Morris.Line({
       //   element: 'examplefirst',
