@@ -4,8 +4,8 @@ ansible_user: ubuntu
 ansible_ssh_private_key_file: ~/.ssh/NectarGroupKey.pem
 ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
 remote_working_directory: /home/ubuntu/COMP90024
-repository_name: comp90024-project2
-git_repo: /home/ubuntu/COMP90024/comp90024-project2
+repository_name: CCC-A2
+git_repo: /home/ubuntu/COMP90024/CCC-A2
 couchdb_user: admin
 couchdb_password: admin
 couchdb_container_name: 'mycouchdb'
