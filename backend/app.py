@@ -64,7 +64,7 @@ def set1():
     
     res = dict.fromkeys(suburbName, 0)
     for i in range(len(suburbName)):
-        res[suburbName[i]] = {'posPercentage': 0}
+        res[suburbName[i]] = {'pos': 0}
 
     for r in uname_list:
         if r.key[1] == 'neg':
@@ -79,17 +79,17 @@ def set1():
         else:
             continue
     for r in uname_list:
-        res[r.key[0]]['posPercentage'] = dic1[r.key[0]]
+        res[r.key[0]]['pos'] = dic1[r.key[0]]
     
     for sub in suburbName:
         for doc in aurin1.find({'selector': {'sub': sub}}):
             rate.append(doc['rate'])
             res[sub]['aurin'] = doc['chart']
-        x.append(res[sub]['posPercentage'])
+        x.append(res[sub]['pos'])
     
     newRate = []
     for i in rate:
-        newRate.append(int(float(i)))
+        newRate.append(float(i))
 
     for r in uname_list:
         slope, intercept, r_value, p_value, std_err = st.linregress(x, newRate)
@@ -150,7 +150,7 @@ def set2():
     res = dict.fromkeys(suburbName, 0)
     print(res)
     for i in range(len(suburbName)):
-        res[suburbName[i]] = {'posPercentage': 0}
+        res[suburbName[i]] = {'pos': 0}
         
     for r in uname_list:
         if r.key[1] == 'neg':
@@ -165,16 +165,16 @@ def set2():
         else:
             continue
     for r in uname_list:
-        res[r.key[0]]['posPercentage'] = dic2[r.key[0]]
+        res[r.key[0]]['pos'] = dic2[r.key[0]]
     for sub in suburbName:
         for doc in aurin2.find({'selector': {'sub': sub}}):
             rate.append(doc['rate'])
             res[sub]['aurin'] = doc['chart']
-        x.append(res[sub]['posPercentage'])
+        x.append(res[sub]['pos'])
     
     newRate = []
     for i in rate:
-        newRate.append(int(float(i)))
+        newRate.append(float(i))
     
     for r in uname_list:
         slope, intercept, r_value, p_value, std_err = st.linregress(x, newRate)
@@ -252,7 +252,7 @@ def set3():
             
     newRate = []
     for i in rate:
-        newRate.append(int(float(i)))
+        newRate.append(float(i))
         
     for r in uname_list:
         slope, intercept, r_value, p_value, std_err = st.linregress(x, newRate)
