@@ -2,6 +2,7 @@ from flask import Flask,render_template,request
 from flask import jsonify
 from flask_cors import CORS
 import couchdb
+import scipy.stats as st
 
 suburbName = ["Flemington", "Carlton", "Docklands", "East Melbourne", "Kensington", "Melbourne", "North Melbourne", "Parkville", "Southbank", "Port Melbourne", "South Yarra - East"]
 
@@ -9,9 +10,9 @@ suburbName = ["Flemington", "Carlton", "Docklands", "East Melbourne", "Kensingto
 app = Flask(__name__)
 CORS(app, supports_credentials=True)
 
-@app.route("/")
-def index():
-    return render_template("index.html")
+# @app.route("/")
+# def index():
+#     return render_template("index.html")
 
 @app.route("/Scenario1",methods=["GET","POST"])
 def set1():
@@ -58,18 +59,43 @@ def set1():
     db1["_design/users"] = design
     uname_list = db1.view('users/get_unames', group_level=2)
     dic1 = {}
-    print(uname_list)
+    rate = []
+    x = []
+    
+    res = dict.fromkeys(suburbName, 0)
+    for i in range(len(suburbName)):
+        res[suburbName[i]] = {'posPercentage': 0}
 
     for r in uname_list:
         if r.key[1] == 'neg':
-            dic1[r.key[0]] = r.value
+            dic1[r.key[0]] = [r.value,0]
+        elif r.key[1] == 'neu':
+            dic1[r.key[0]][1] = r.value 
         elif r.key[1] == 'pos':
-            neg_num = dic1[r.key[0]]
+            neg_num = dic1[r.key[0]][0]
+            neu_num = dic1[r.key[0]][1]
             pos_num = r.value
-            dic1[r.key[0]] = pos_num / (neg_num + pos_num)
+            dic1[r.key[0]] = pos_num / (neg_num + neu_num + pos_num)
         else:
             continue
-    print(dic1)
+    for r in uname_list:
+        res[r.key[0]]['posPercentage'] = dic1[r.key[0]]
+    
+    for sub in suburbName:
+        for doc in aurin1.find({'selector': {'sub': sub}}):
+            rate.append(doc['rate'])
+            res[sub]['aurin'] = doc['chart']
+        x.append(res[sub]['lang'])
+    
+    newRate = []
+    for i in rate:
+        newRate.append(int(float(i)))
+
+    for r in uname_list:
+        slope, intercept, r_value, p_value, std_err = st.linregress(x, newRate)
+        res[r.key[0]]['b0'] = intercept
+        res[r.key[0]]['b1'] = slope
+    
     db1.delete(db1["_design/users"])
     return jsonify(dic1)
 
@@ -118,20 +144,44 @@ def set2():
     db2["_design/users"] = design
     uname_list = db2.view('users/get_unames', group_level=2)
     dic2 = {}
-    print(uname_list)
-
+    rate = []
+    x = []
+        
+    res = dict.fromkeys(suburbName, 0)
+    print(res)
+    for i in range(len(suburbName)):
+        res[suburbName[i]] = {'posPercentage': 0}
+        
     for r in uname_list:
         if r.key[1] == 'neg':
-            dic2[r.key[0]] = r.value
+            dic2[r.key[0]] = [r.value,0]
+        elif r.key[1] == 'neu':
+            dic2[r.key[0]][1] = r.value 
         elif r.key[1] == 'pos':
-            neg_num = dic2[r.key[0]]
+            neg_num = dic2[r.key[0]][0]
+            neu_num = dic2[r.key[0]][1]
             pos_num = r.value
-            dic2[r.key[0]] = pos_num / (neg_num + pos_num)
+            dic2[r.key[0]] = pos_num / (neg_num + neu_num + pos_num)
         else:
             continue
-    print(dic2)
+    for r in uname_list:
+        res[r.key[0]]['posPercentage'] = dic2[r.key[0]]
+    for sub in suburbName:
+        for doc in aurin2.find({'selector': {'sub': sub}}):
+            rate.append(doc['rate'])
+            res[sub]['aurin'] = doc['chart']
+    
+    newRate = []
+    for i in rate:
+        newRate.append(int(float(i)))
+    
+    for r in uname_list:
+        slope, intercept, r_value, p_value, std_err = st.linregress(x, newRate)
+        res[r.key[0]]['b0'] = intercept
+        res[r.key[0]]['b1'] = slope
+    
     db2.delete(db2["_design/users"])
-    return jsonify(dic2)
+    return jsonify(res)
 
 @app.route("/Scenario3",methods=["GET","POST"])
 def set3():
@@ -161,6 +211,9 @@ def set3():
     db3.delete(db3["_design/users"])  ##删除视图
     #############################去重结束#################################
 
+
+
+
     map_fun = """
                     function(doc) {
 
@@ -181,17 +234,40 @@ def set3():
 
     db3["_design/users"] = design
     uname_list = db3.view('users/get_unames', group_level=2)
+    rate = []
+    x = []
 
     res = dict.fromkeys(suburbName, 0)
+    print(res)
+    for i in range(len(suburbName)):
+        res[suburbName[i]] = {'lang': 0}
     for r in uname_list:
-        res[r.key[0]] += 1
-    print(res)  # 发送给前端的东西
+        res[r.key[0]]['lang'] += 1
+    for sub in suburbName:
+        for doc in aurin3.find({'selector': {'sub': sub}}):
+            rate.append(doc['rate'])
+            res[sub]['aurin'] = doc['chart']
+            
+    newRate = []
+    for i in rate:
+        newRate.append(int(float(i)))
+        
+    for r in uname_list:
+        slope, intercept, r_value, p_value, std_err = st.linregress(x, newRate)
+        res[r.key[0]]['b0'] = intercept
+        res[r.key[0]]['b1'] = slope
+            
     db3.delete(db3["_design/users"])
     return jsonify(res)
+
+
 
 if __name__ == '__main__':
     server = couchdb.Server("http://admin:admin@172.26.132.76:5984")
     db1 = server['scenario1']
     db2 = server['scenario2']
     db3 = server['scenario3']
-    app.run()
+    aurin1 = server['aurin1']
+    aurin2 = server['aurin2']
+    aurin3 = server['aurin3']
+    app.run(port=5001)
