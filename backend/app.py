@@ -85,7 +85,7 @@ def set1():
         for doc in aurin1.find({'selector': {'sub': sub}}):
             rate.append(doc['rate'])
             res[sub]['aurin'] = doc['chart']
-        x.append(res[sub]['lang'])
+        x.append(res[sub]['posPercentage'])
     
     newRate = []
     for i in rate:
@@ -170,6 +170,7 @@ def set2():
         for doc in aurin2.find({'selector': {'sub': sub}}):
             rate.append(doc['rate'])
             res[sub]['aurin'] = doc['chart']
+        x.append(res[sub]['posPercentage'])
     
     newRate = []
     for i in rate:
@@ -247,6 +248,7 @@ def set3():
         for doc in aurin3.find({'selector': {'sub': sub}}):
             rate.append(doc['rate'])
             res[sub]['aurin'] = doc['chart']
+        x.append(res[sub]['lang'])
             
     newRate = []
     for i in rate:
