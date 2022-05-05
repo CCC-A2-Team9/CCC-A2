@@ -502,17 +502,17 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiamFzbXluenoiLCJhIjoiY2wyOGs3c24yMGE2NjNjcjRua
 
       // Data for error handling
       data_test = {
-        "Carlton": {"pos": 0.8, "aurin": 9.8, "b0": -0.02676, "b1": 0.15409}, 
-        "Docklands": {"pos": 0.8, "aurin": 6.3, "b0": -0.02676, "b1": 0.15409},
-        "East Melbourne": {"pos": 0.5, "aurin": 3.8, "b0": -0.02676, "b1": 0.15409}, 
-        "Kensington": {"pos": 0.2, "aurin": 6.1, "b0": -0.02676, "b1": 0.15409}, 
-        "Melbourne": {"pos": 0.8, "aurin": 21.8, "b0": -0.02676, "b1": 0.15409},
-        "North Melbourne": {"pos": 0.7, "aurin": 11.5, "b0": -0.02676, "b1": 0.15409}, 
-        "Parkvile": {"pos": 0.7, "aurin": 4.9, "b0": -0.02676, "b1": 0.15409}, 
-        "Port Melbourne": {"pos": 0.3, "aurin": 6.9, "b0": -0.02676, "b1": 0.15409}, 
-        "Southbank": {"pos": 0.2, "aurin": 12.6, "b0": -0.02676, "b1": 0.15409}, 
-        "South Yarra": {"pos": 0.4, "aurin": 11.6, "b0": -0.02676, "b1": 0.15409}, 
-        "Flemington": {"pos": 0.3, "aurin": 4.7, "b0": -0.02676, "b1": 0.15409}
+        "Carlton": {"pos": 0.3333, "aurin": 9.8, "b0": 0.0529, "b1": 0.0169}, 
+        "Docklands": {"pos": 0.2889, "aurin": 6.3, "b0": 0.0529, "b1": 0.0169},
+        "East Melbourne": {"pos": 0.4359, "aurin": 3.8, "b0": 0.0529, "b1": 0.0169}, 
+        "Kensington": {"pos": 0.4167, "aurin": 6.1, "b0": 0.0529, "b1": 0.0169}, 
+        "Melbourne": {"pos": 0.3935, "aurin": 21.8, "b0": 0.0529, "b1": 0.0169},
+        "North Melbourne": {"pos": 0.3256, "aurin": 11.5, "b0": 0.0529, "b1": 0.0169}, 
+        "Parkvile": {"pos": 0.3494, "aurin": 4.9, "b0": 0.0529, "b1": 0.0169}, 
+        "Port Melbourne": {"pos": 0.4425, "aurin": 6.9, "b0": 0.0529, "b1": 0.0169}, 
+        "Southbank": {"pos": 0.4425, "aurin": 12.6, "b0": 0.0529, "b1": 0.0169}, 
+        "South Yarra": {"pos": 0.3333, "aurin": 11.6, "b0": 0.0529, "b1": 0.0169}, 
+        "Flemington": {"pos": 0.4545, "aurin": 4.7, "b0": 0.0529, "b1":0.0169}
       };
       console.log(data_test); 
       
@@ -579,7 +579,14 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiamFzbXluenoiLCJhIjoiY2wyOGs3c24yMGE2NjNjcjRua
       console.log(beta1);
 
       // Regression model for AURIN data and Twitter data
-      document.getElementById("regression_model").innerHTML="y="+beta1+ "x"+beta0 ;
+      let print_x;
+      
+      if (beta0< 0) {
+        print_x = "x";
+      } else {
+        print_x = "x+";
+      }
+      document.getElementById("regression_model").innerHTML ="y="+beta1+print_x+beta0;
       
     </script>
 
