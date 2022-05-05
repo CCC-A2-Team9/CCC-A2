@@ -499,17 +499,17 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiamFzbXluenoiLCJhIjoiY2wyOGs3c24yMGE2NjNjcjRua
         
        // Data for error handling
        data_test = {
-        "Carlton": {"lang": 2, "aurin": 8, "b0": +49472, "b1": -401}, 
-        "Docklands": {"lang": 6, "aurin": 6.6, "b0": 49472, "b1": -401},
-        "East Melbourne": {"lang": 5, "aurin": 3.2, "b0": 49472, "b1": -401}, 
-        "Kensington": {"lang": 4, "aurin": 6.6, "b0": 49472, "b1": -401}, 
-        "Melbourne": {"lang": 1, "aurin": 21.8, "b0": 49472, "b1": -401},
-        "North Melbourne": {"lang": 14, "aurin": 11.4, "b0": 49472, "b1": -401}, 
-        "Parkvile": {"lang": 4, "aurin": 3.2, "b0": 49472, "b1": -401}, 
-        "Port Melbourne": {"lang": 4, "aurin": 9.9, "b0": 49472, "b1": -401}, 
-        "Southbank": {"lang": 6, "aurin": 11.5, "b0": 49472, "b1": -401}, 
-        "South Yarra": {"lang": 2, "aurin": 12.7, "b0": 49472, "b1": -401}, 
-        "Flemington": {"lang": 5, "aurin": 5.2, "b0": 49472, "b1": -401}
+        "Carlton": {"lang": 2, "aurin": 8, "b0": 61976.138, "b1": -2996.17}, 
+        "Docklands": {"lang": 6, "aurin": 6.6, "b0": 61976.138, "b1": -2996.17},
+        "East Melbourne": {"lang": 5, "aurin": 3.2, "b0": 61976.138, "b1": -2996.17}, 
+        "Kensington": {"lang": 4, "aurin": 6.6, "b0": 61976.138, "b1": -2996.17}, 
+        "Melbourne": {"lang": 1, "aurin": 21.8, "b0": 61976.138, "b1": -2996.17},
+        "North Melbourne": {"lang": 14, "aurin": 11.4, "b0": 61976.138, "b1": -2996.17}, 
+        "Parkvile": {"lang": 4, "aurin": 3.2, "b0": 61976.138, "b1": -2996.17}, 
+        "Port Melbourne": {"lang": 4, "aurin": 9.9, "b0": 61976.138, "b1": -2996.17}, 
+        "Southbank": {"lang": 6, "aurin": 11.5, "b0": 61976.138, "b1": -2996.17}, 
+        "South Yarra": {"lang": 2, "aurin": 12.7, "b0": 61976.138, "b1": -2996.17}, 
+        "Flemington": {"lang": 5, "aurin": 5.2, "b0": 61976.138, "b1": -2996.17}
       };
       console.log(data_test); 
       
@@ -576,7 +576,14 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiamFzbXluenoiLCJhIjoiY2wyOGs3c24yMGE2NjNjcjRua
       console.log(beta1);
 
       // Regression model for AURIN data and Twitter data
-      document.getElementById("regression_model").innerHTML="y="+beta1+ "x+"+beta0 ;
+      let print_x;
+      
+      if (beta0< 0) {
+        print_x = "x";
+      } else {
+        print_x = "x+";
+      }
+      document.getElementById("regression_model").innerHTML ="y="+beta1+print_x+beta0;
 
       </script>
   
