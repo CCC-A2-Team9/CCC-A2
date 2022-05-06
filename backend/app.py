@@ -24,13 +24,13 @@ def set1():
                          """
     reduce_fun_rm = "_count"
     design = {'views': {
-        'get_unames': {
+        'get_view': {
             'map': map_fun_rm,
             'reduce': reduce_fun_rm
         }
     }}
     db1["_design/users"] = design
-    uname_list = db1.view('users/get_unames', group_level=2)
+    uname_list = db1.view('users/get_view', group_level=2)
     for i in uname_list:
         if (i.value > 1):
             temp = None
