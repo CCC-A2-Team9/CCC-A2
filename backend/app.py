@@ -37,8 +37,8 @@ def set1():
             #### userid 就是tweet的id  text就是tweeet 的内容
             for doc in db1.find({'selector': {'userid': i.key[0], "text": i.key[1]}}):
                 temp = doc
-
-            db1.delete(temp)  ##删除重复的数据
+            if(temp!=None):
+                db1.delete(temp)  ##删除重复的数据
     db1.delete(db1["_design/users"])  ##删除视图
     #############################去重结束#################################
 
@@ -122,8 +122,8 @@ def set2():
             #### userid 就是tweet的id  text就是tweeet 的内容
             for doc in db2.find({'selector': {'userid': i.key[0], "text": i.key[1]}}):
                 temp = doc
-
-            db2.delete(temp)  ##删除重复的数据
+            if(temp!=None):
+                db2.delete(temp)  ##删除重复的数据
     db2.delete(db2["_design/users"])  ##删除视图
     #############################去重结束#################################
 
@@ -207,8 +207,8 @@ def set3():
             #### userid 就是tweet的id  text就是tweeet 的内容
             for doc in db3.find({'selector': {'userid': i.key[0], "text": i.key[1]}}):
                 temp = doc
-
-            db3.delete(temp)  ##删除重复的数据
+            if(temp!=None):
+                db3.delete(temp)  ##删除重复的数据
     db3.delete(db3["_design/users"])  ##删除视图
     #############################去重结束#################################
 
