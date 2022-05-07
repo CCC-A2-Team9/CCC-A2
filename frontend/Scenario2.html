@@ -180,7 +180,7 @@
             <div class="col-lg-6">
               <div class="content-panel">
                 <h4><i class="fa fa-angle-right"></i> Regression Result </h4>
-                <h4> <center> y=0.15409x-0.02676 </center> </h4>
+                <center> <h4 id="regression_model">  Regression result </h4> </center>
                 <h4> y = the percentage of graduate students</h4>
                 <h4> x = the percentage of tweets with positive attitude towards education</h4>
                 <div class="panel-body">
@@ -241,7 +241,7 @@
    <!-- Third-party Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   <script src='https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js'></script>
-  <script src="lib/morris-conf2.js"></script>
+  <!-- <script src="lib/morris-conf2.js"></script> -->
   <script src="lib/raphael/raphael.min.js"></script>
   <script src="lib/morris/morris.min.js"></script>
 
@@ -498,62 +498,56 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiamFzbXluenoiLCJhIjoiY2wyOGs3c24yMGE2NjNjcjRua
                )
               )
               .addTo(map);
-            }
+            };
 
-      // Fetch the data from back-end
-      var json_tweet_data = (function() {
+      // Data for error handling
+      data_test = {
+        "Carlton": {"pos": 0.3333, "aurin": 9.8, "b0": 0.0529, "b1": 0.0169}, 
+        "Docklands": {"pos": 0.2889, "aurin": 6.3, "b0": 0.0529, "b1": 0.0169},
+        "East Melbourne": {"pos": 0.4359, "aurin": 3.8, "b0": 0.0529, "b1": 0.0169}, 
+        "Kensington": {"pos": 0.4167, "aurin": 6.1, "b0": 0.0529, "b1": 0.0169}, 
+        "Melbourne": {"pos": 0.3935, "aurin": 21.8, "b0": 0.0529, "b1": 0.0169},
+        "North Melbourne": {"pos": 0.3256, "aurin": 11.5, "b0": 0.0529, "b1": 0.0169}, 
+        "Parkvile": {"pos": 0.3494, "aurin": 4.9, "b0": 0.0529, "b1": 0.0169}, 
+        "Port Melbourne": {"pos": 0.4425, "aurin": 6.9, "b0": 0.0529, "b1": 0.0169}, 
+        "Southbank": {"pos": 0.4425, "aurin": 12.6, "b0": 0.0529, "b1": 0.0169}, 
+        "South Yarra": {"pos": 0.3333, "aurin": 11.6, "b0": 0.0529, "b1": 0.0169}, 
+        "Flemington": {"pos": 0.4545, "aurin": 4.7, "b0": 0.0529, "b1":0.0169}
+      };
+      console.log(data_test); 
+      
+      // Fetch the real-time data from back-end
+      var json_ajax_data = (function() {
         var json_data = null;
         $.ajax({
           async: false,
-          url:"http://127.0.0.1:5000/dataFromAjax",
+          url:"http://127.0.0.1:5001/Scenario2",
           dataType: "json",
           Type: "GET",
           success: function (data) {
             // alert('Successfully updated!');
             json_data = data;
-        },
-        error:function(){
+          },
+          error:function(){
             alert("fail...");
-            // For error handling 
-            Morris.Bar({
-              element: 'hero-bar',
-              data: [
-                {suburb: 'Carlton', positive_tweet: 0.9},
-                {suburb: 'Docklands', positive_tweet: 0.8},
-                {suburb: 'East Melbourne', positive_tweet: 0.7},
-                {suburb: 'Kensington', positive_tweet: 0.6},
-                {suburb: 'Melbourne', positive_tweet: 0.9},
-                {suburb: 'North Melbourne', positive_tweet: 0.7},
-                {suburb: 'Parkvile',positive_tweet: 0.8},
-                {suburb: 'Port Melbourne', positive_tweet: 0.2},
-                {suburb: 'Southbank', positive_tweet: 0.6},
-                {suburb: 'South Yarra', positive_tweet: 0.5},
-                {suburb: 'Flemington', positive_tweet: 0.4},
-              ],
-              xkey: 'suburb',
-              ykeys: ['positive_tweet'],
-              labels: ['The percentage of tweets towards positive attitude'],
-              barRatio: 0.4,
-              xLabelAngle: 35,
-              hideHover: 'auto',
-              barColors: ['#ac92ec']
-            });
+            // Historial data for error handling
+            json_data = data_test;
           }
         });
         return json_data;
       })();
 
-      // Change the data format we loaded.
-      var list_json=[];
-        for (var key in json_tweet_data){
-          list_json.push({"suburb":key,"positive_tweet":json_tweet_data[key]})
+      // Data from tweets analysis
+      var tweet_data_list=[];
+      for (var key in json_ajax_data){
+        tweet_data_list.push({"suburb":key,"positive_tweet":json_ajax_data[key]["pos"]})
         }
-        console.log(list_json);
+      console.log(tweet_data_list);
 
-      // Histogram
+      // Histogram for Twitter data 
       Morris.Bar({
         element: 'hero-bar',
-        data: list_json,
+        data: tweet_data_list,
         xkey: 'suburb',
         ykeys: ["positive_tweet"],
         labels: ['The percentage of tweets towards positive attitude'],
@@ -562,19 +556,37 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiamFzbXluenoiLCJhIjoiY2wyOGs3c24yMGE2NjNjcjRua
         hideHover: 'auto',
         barColors: ['#ac92ec']
       });
+      
+      // Data from AURIN
+      var Aurin_data_list = [];
+        for (var key in json_ajax_data){
+            Aurin_data_list.push({"label":key,"value":json_ajax_data[key]["aurin"]})
+        }
+        console.log(Aurin_data_list);
+      
+      // Pie chart for AURIN data
+      Morris.Donut({
+        element: 'hero-donut',
+        data: Aurin_data_list,
+          // colors: ['#3498db', '#2980b9', '#34495e'],
+        formatter: function (y) { return y + "%" }
+      });
 
-    //   const fs = require('fs')
-  
-    // // Reading data in utf-8 format
-    // // which is a type of character set.
-    // // Instead of 'utf-8' it can be 
-    // // other character set also like 'ascii'
-    // fs.readFile('Input.txt', 'utf-8', (err, data) => {
-    //     if (err) throw err;
-    //     // Converting Raw Buffer to text
-    //     // data using tostring function.
-    //    console.log(data);
-    // })
+      // Regression coefficient 
+      var beta0 = json_ajax_data["Carlton"]["b0"];
+      var beta1 = json_ajax_data["Carlton"]["b1"];
+      console.log(beta0);
+      console.log(beta1);
+
+      // Regression model for AURIN data and Twitter data
+      let print_x;
+      
+      if (beta0< 0) {
+        print_x = "x";
+      } else {
+        print_x = "x+";
+      }
+      document.getElementById("regression_model").innerHTML ="y="+beta1+print_x+beta0;
       
     </script>
 
