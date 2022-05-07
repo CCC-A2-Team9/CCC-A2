@@ -10,7 +10,9 @@ suburbName = ["Flemington", "Carlton", "Docklands", "East Melbourne", "Kensingto
 app = Flask(__name__)
 CORS(app, supports_credentials=True)
 
-# @app.route("/")
+@app.route("/")
+def hello_world():
+    return 'Hello World!'
 # def index():
 #     return render_template("index.html")
 
@@ -272,4 +274,4 @@ if __name__ == '__main__':
     aurin1 = server['aurin1']
     aurin2 = server['aurin2']
     aurin3 = server['aurin3']
-    app.run(port=5001)
+    app.run()

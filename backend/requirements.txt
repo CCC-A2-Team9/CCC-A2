@@ -1,0 +1,13 @@
+tweepy
+CouchDB
+configparser
+json
+datetime
+shapefile
+flask                   
+Flask-HTTPAuth
+Flask-RESTful
+Flask-Cors        
+Jinja2 
+MarkupSafe
+Flask-CouchDB

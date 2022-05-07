@@ -7,7 +7,7 @@
   roles:
     - role: git-pull-source-repository
     - role: deploy-frontend
-#     - role: deploy-backend
+    - role: deploy-backend
 
 # - hosts: worker
 #   vars_files:
