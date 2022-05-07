@@ -265,7 +265,6 @@ def set3():
     return jsonify(res)
 
 
-
 if __name__ == '__main__':
     server = couchdb.Server("http://admin:admin@172.26.132.76:5984")
     db1 = server['scenario1']
@@ -274,4 +273,4 @@ if __name__ == '__main__':
     aurin1 = server['aurin1']
     aurin2 = server['aurin2']
     aurin3 = server['aurin3']
-    app.run()
+    app.run(host="0.0.0.0")
