@@ -181,7 +181,7 @@
                 <div class="content-panel">
                   <h4><i class="fa fa-angle-right"></i> Regression Result </h4>
                   <center> <h4 id="regression_model">  Regression result </h4> </center>
-                  <h4> y =  the number of people who reached median employment income(AUD) in each suburb</h4>
+                  <h4> y = the number of people who reached median employment income(AUD) in each suburb</h4>
                   <h4> x = the number of different languages are used for tweeting in given suburb</h4>
                   <div class="panel-body">
                     <div id="hero-graph" class="graph"></div>
@@ -196,7 +196,7 @@
               <h2 contenteditable="true"> Conclusion </h2>
             </div>
             <div class="col-md-6">
-              <p contenteditable="true" class="mt">For the 11 suburbs in the city of Melbourne, the number of languages used is positively correlated with the number of people whose salary reached median employment income from AURIN.</p>
+              <p contenteditable="true" class="mt" id="result_text"> Results</p>
             </div>
           </div>
         <!-- /MAIN CONTENT -->
@@ -518,7 +518,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiamFzbXluenoiLCJhIjoiY2wyOGs3c24yMGE2NjNjcjRua
         var json_data = null;
         $.ajax({
           async: false,
-          url:"http://172.26.132.76:5000/Scenario3",
+          url:"http://127.0.0.1:5001/Scenario3",
           dataType: "json",
           Type: "GET",
           success: function (data) {
@@ -584,6 +584,17 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiamFzbXluenoiLCJhIjoiY2wyOGs3c24yMGE2NjNjcjRua
         print_x = "x+";
       }
       document.getElementById("regression_model").innerHTML ="y="+beta1+print_x+beta0;
+
+      // Result text
+      let correlation_text;
+      
+      if (beta1< 0) {
+        correlation_text = "negatively";
+      } else {
+        correlation_text = "postively";
+      }
+
+      document.getElementById("result_text").innerHTML ="For the 11 suburbs in the city of Melbourne, the number of languages used is " + correlation_text + " correlated with the number of people whose salary reached median employment income from AURIN.";
 
       </script>
   
