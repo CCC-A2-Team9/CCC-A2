@@ -200,7 +200,7 @@
             <h2 contenteditable="true"> Conclusion </h2>
           </div>
           <div class="col-md-6">
-            <p contenteditable="true" class="mt"> For the 11 suburbs in the city of Melbourne, the number of recruitment tweets towards a positive attitude is positively correlated with the number of employed people from AURIN.</p>
+            <p contenteditable="true" class="mt" id="result_text"> Results</p>
           </div>
         </div>
 
@@ -591,6 +591,18 @@
         print_x = "x+";
       }
       document.getElementById("regression_model").innerHTML ="y="+beta1+print_x+beta0;
+
+      // Result text
+      let correlation_text;
+      
+      if (beta1< 0) {
+        correlation_text = "negatively";
+      } else {
+        correlation_text = "postively";
+      }
+
+      document.getElementById("result_text").innerHTML ="For the 11 suburbs in the city of Melbourne, the number of recruitment tweets towards a positive attitude is " + correlation_text +" correlated with the number of employed people from AURIN.";
+
 
     </script>
 
