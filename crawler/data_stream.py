@@ -65,7 +65,7 @@ def stopwordslist(filepath):
     stopwords = [line.strip() for line in open(filepath, 'r', encoding='utf-8').readlines()]
     return stopwords
 
-stopwordsL = stopwordslist("C:/Users/lenovo/Desktop/stopwords.txt")
+stopwordsL = stopwordslist("stopwords.txt")
 
 def remove_pattern(input_txt, pattern):
     r = re.findall(pattern, input_txt)
