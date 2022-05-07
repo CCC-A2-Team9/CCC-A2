@@ -1,5 +1,5 @@
 ---
-#deploy database and crawler
+#deploy frontend and backend
 - hosts: masternode
   vars_files:
     - host_vars/config.yaml
