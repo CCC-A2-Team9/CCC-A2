@@ -192,17 +192,6 @@
               </div>
             </div>
           </div>
-          <div class="row mt">
-            <div class="col-lg-6">
-              <div class="content-panel">
-                <h4><i class="fa fa-angle-right"></i> Record </h4>
-                <center> <h4 id="record">  Record result </h4> </center>
-                    <div class="panel-body">
-                  <div id="hero-graph" class="graph"></div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
         
         <div class="mt"></div>
@@ -515,28 +504,6 @@
               .addTo(map);
             };
 
-        // Fetch the real-time data from back-end 1
-        var json_ajax_data_record = (function() {
-        var json_data_record = null;
-        $.ajax({
-          async: false,
-          url:"http://172.26.132.76:5000/GetNumber",
-          dataType: "json",
-          Type: "GET",
-          success: function (data) {
-            // alert('Successfully updated!');
-            json_data_record = data;
-          },
-          error:function(){
-            alert("fail...");
-          }
-        });
-        return json_data_record;
-      })();
-
-      document.getElementById("record").innerHTML ="A: " + json_data_record["1"];
-
-
       // Data for error handling
       data_test = {
         "Carlton": {"pos": 0.9412, "aurin": 8, "b0": 0.001543, "b1": 0.117035}, 
@@ -558,7 +525,7 @@
         var json_data = null;
         $.ajax({
           async: false,
-          url:"http://172.26.132.76:5000/Scenario1",
+          url:"http://172.26.132.76:5000/testscenario4",
           dataType: "json",
           Type: "GET",
           success: function (data) {
