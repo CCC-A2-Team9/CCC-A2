@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request
+from flask import Flask,render_template,request,abort
 from flask import jsonify
 from flask_cors import CORS
 import couchdb
@@ -16,9 +16,14 @@ def hello_world():
 # def index():
 #     return render_template("index.html")
 
+@app.errorhandler(501)
+def error_501_handler(err):
+    return "MapReduce Function went wrong,Error occurs, " + err
+
+
 @app.route("/Scenario1",methods=["GET","POST"])
 def set1():
-    #############################去重开始#################################
+    
     map_fun_rm = """
                            function(doc) {
                                emit([doc.userid,doc.text], 1)
@@ -32,17 +37,21 @@ def set1():
         }
     }}
     db1["_design/users"] = design
+    
+    if(db.view('users/get_unames', group_level=2)==None):
+        abort(501)
+        
     uname_list = db1.view('users/get_view', group_level=2)
     for i in uname_list:
         if (i.value > 1):
             temp = None
-            #### userid 就是tweet的id  text就是tweeet 的内容
+            
             for doc in db1.find({'selector': {'userid': i.key[0], "text": i.key[1]}}):
                 temp = doc
             if (temp is not None):
-                db1.delete(temp)  ##删除重复的数据
-    db1.delete(db1["_design/users"])  ##删除视图
-    #############################去重结束#################################
+                db1.delete(temp)  
+    db1.delete(db1["_design/users"])  
+    
 
     map_fun = """
                     function(doc) {
@@ -57,7 +66,8 @@ def set1():
             'reduce': reduce_fun
         }
     }}
-
+    if(db.view('users/get_unames', group_level=2)==None):
+        abort(501)
     db1["_design/users"] = design
     uname_list = db1.view('users/get_unames', group_level=2)
     dic1 = {}
@@ -103,7 +113,7 @@ def set1():
 
 @app.route("/Scenario2",methods=["GET","POST"])
 def set2():
-    #############################去重开始#################################
+    
     map_fun_rm = """
                             function(doc) {
                                 emit([doc.userid,doc.text], 1)
@@ -117,17 +127,21 @@ def set2():
         }
     }}
     db2["_design/users"] = design
+    
+    if(db.view('users/get_unames', group_level=2)==None):
+        abort(501)
+        
     uname_list = db2.view('users/get_unames', group_level=2)
     for i in uname_list:
         if (i.value > 1):
             temp = None
-            #### userid 就是tweet的id  text就是tweeet 的内容
+            
             for doc in db2.find({'selector': {'userid': i.key[0], "text": i.key[1]}}):
                 temp = doc
             if (temp is not None):
-                db2.delete(temp)  ##删除重复的数据
-    db2.delete(db2["_design/users"])  ##删除视图
-    #############################去重结束#################################
+                db2.delete(temp) 
+    db2.delete(db2["_design/users"]) 
+   
 
     map_fun = """
                     function(doc) {
@@ -144,6 +158,10 @@ def set2():
     }}
 
     db2["_design/users"] = design
+    
+    if(db.view('users/get_unames', group_level=2)==None):
+        abort(501)
+        
     uname_list = db2.view('users/get_unames', group_level=2)
     dic2 = {}
     rate = []
@@ -188,7 +206,7 @@ def set2():
 
 @app.route("/Scenario3",methods=["GET","POST"])
 def set3():
-    #############################去重开始#################################
+    
     map_fun_rm = """
                             function(doc) {
                                 emit([doc.userid,doc.text], 1)
@@ -202,18 +220,21 @@ def set3():
         }
     }}
     db3["_design/users"] = design
+    
+    if(db.view('users/get_unames', group_level=2)==None):
+        abort(501)
+        
     uname_list = db3.view('users/get_unames', group_level=2)
     for i in uname_list:
         if (i.value > 1):
             temp = None
-            #### userid 就是tweet的id  text就是tweeet 的内容
+            
             for doc in db3.find({'selector': {'userid': i.key[0], "text": i.key[1]}}):
                 temp = doc
             if (temp is not None):
-                db3.delete(temp)  ##删除重复的数据
-    db3.delete(db3["_design/users"])  ##删除视图
-    #############################去重结束#################################
-
+                db3.delete(temp)  
+    db3.delete(db3["_design/users"])  
+   
 
 
 
@@ -236,6 +257,10 @@ def set3():
     }}
 
     db3["_design/users"] = design
+    
+    if(db.view('users/get_unames', group_level=2)==None):
+        abort(501)
+        
     uname_list = db3.view('users/get_unames', group_level=2)
     rate = []
     x = []
