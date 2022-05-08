@@ -38,7 +38,7 @@ def set1():
     }}
     db1["_design/users"] = design
     
-    if(db.view('users/get_unames', group_level=2)==None):
+    if(db1.view('users/get_unames', group_level=2)==None):
         abort(501)
         
     uname_list = db1.view('users/get_view', group_level=2)
@@ -66,7 +66,7 @@ def set1():
             'reduce': reduce_fun
         }
     }}
-    if(db.view('users/get_unames', group_level=2)==None):
+    if(db1.view('users/get_unames', group_level=2)==None):
         abort(501)
     db1["_design/users"] = design
     uname_list = db1.view('users/get_unames', group_level=2)
@@ -128,7 +128,7 @@ def set2():
     }}
     db2["_design/users"] = design
     
-    if(db.view('users/get_unames', group_level=2)==None):
+    if(db2.view('users/get_unames', group_level=2)==None):
         abort(501)
         
     uname_list = db2.view('users/get_unames', group_level=2)
@@ -159,7 +159,7 @@ def set2():
 
     db2["_design/users"] = design
     
-    if(db.view('users/get_unames', group_level=2)==None):
+    if(db2.view('users/get_unames', group_level=2)==None):
         abort(501)
         
     uname_list = db2.view('users/get_unames', group_level=2)
@@ -221,7 +221,7 @@ def set3():
     }}
     db3["_design/users"] = design
     
-    if(db.view('users/get_unames', group_level=2)==None):
+    if(db3.view('users/get_unames', group_level=2)==None):
         abort(501)
         
     uname_list = db3.view('users/get_unames', group_level=2)
@@ -258,7 +258,7 @@ def set3():
 
     db3["_design/users"] = design
     
-    if(db.view('users/get_unames', group_level=2)==None):
+    if(db3.view('users/get_unames', group_level=2)==None):
         abort(501)
         
     uname_list = db3.view('users/get_unames', group_level=2)
