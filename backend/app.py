@@ -289,16 +289,10 @@ def set3():
     db3.delete(db3["_design/users"])
     return jsonify(res)
 
-@app.route("/GetNumber", methods=["GET", "POST"])
-def set5():
-    db1 = server['all_tweets'].info()
-    doc={"something":db1}
-    jsonm= jsonify(doc)
-    return jsonm
 
 if __name__ == '__main__':
     server = couchdb.Server("http://admin:admin@172.26.132.76:5984")
-    db1 = server['scenario1']
+    db1 = server['testscenario4']
     db2 = server['scenario2']
     db3 = server['scenario3']
     aurin1 = server['aurin1']
