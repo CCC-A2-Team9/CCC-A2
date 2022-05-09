@@ -114,7 +114,7 @@ class MyStreamListener(tweepy.StreamListener):
             for suburb in sub_info:
                 # Return true if the point is in the ploygon
                 if suburb[1].contains(point):
-                    sub = sub[0]
+                    sub = suburb[0]
             if(sub is not None):
                 sent = analyzeContext(content)
                 lan = data['lang']
