@@ -27,12 +27,12 @@ auth = tweepy.OAuthHandler(API_key, API_secret)
 auth.set_access_token(Access_token, Access_token_secret)
 
 # Read in shape file
-file=shapefile.Reader('SA2_2016_AUST.shp')
+file=shapefile.Reader('GCCSA_2021_AUST_GDA2020.shp')
 shapes=file.shapes() 
 records=file.records() 
 
 # Collect boundary of the suburbs
-suburbId = [692, 694, 695, 696, 698, 699, 700, 701, 703, 707, 714]
+suburbId = [0,1,4,5,8,9,12,13,16,17,20]
 suburbName = ["Flemington", "Carlton", "Docklands", "East Melbourne", "Kensington", "Melbourne", "North Melbourne", "Parkville", "Southbank", "Port Melbourne", "South Yarra - East"]
 
 sub_plon = []
