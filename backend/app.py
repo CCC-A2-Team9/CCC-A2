@@ -27,8 +27,7 @@ def error_404_handler(err):
 
 @app.route("/Scenario1",methods=["GET","POST"])
 def set1():
-    if(db1["_design/users"] is not None ):
-         db1.delete(db1["_design/users"]) 
+    
     
     map_fun_rm = """
                            function(doc) {
@@ -119,8 +118,7 @@ def set1():
 
 @app.route("/Scenario2",methods=["GET","POST"])
 def set2():
-    if(db2["_design/users"] is not None ):
-         db2.delete(db2["_design/users"]) 
+    
     
     map_fun_rm = """
                             function(doc) {
@@ -214,8 +212,7 @@ def set2():
 
 @app.route("/Scenario3",methods=["GET","POST"])
 def set3():
-    if(db3["_design/users"] is not None ):
-         db3.delete(db3["_design/users"]) 
+   
     
     map_fun_rm = """
                             function(doc) {
