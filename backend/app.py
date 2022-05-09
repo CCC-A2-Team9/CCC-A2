@@ -296,7 +296,7 @@ def set3():
 
 if __name__ == '__main__':
     server = couchdb.Server("http://admin:admin@172.26.132.76:5984")
-    db1 = server['scenario2']
+    db1 = server['testscenario0']
     db2 = server['scenario2']
     db3 = server['scenario3']
     aurin1 = server['aurin1']
