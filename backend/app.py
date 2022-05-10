@@ -18,11 +18,15 @@ def hello_world():
 
 @app.errorhandler(501)
 def error_501_handler(err):
-    return "MapReduce Function went wrong,Error occurs, " + err
+    print("MapReduce Function went wrong,Error occurs, ")
+    print(err)
+    return None
 
 @app.errorhandler(404)
 def error_404_handler(err):
-    return "Something went wrong, because of  " + err
+    print("Something went wrong, because of  ")
+    print(err)
+    return None
 
 
 @app.route("/Scenario1",methods=["GET","POST"])
