@@ -1,3 +1,11 @@
+# team:   group 9
+# member:
+# Zhaoxiang NING, 1261076, Luoyang, China
+# Xinyi ZHOU, 1281911, Wuxi, China
+# Haochu WANG, 1281962, Nantong, China
+# Gengchang XU, 1214774, Zhuhai, China
+# Shiming ZHENG, 1149897, Melbourne, Australia
+
 FROM python:3.7-slim-buster
 WORKDIR /code
 ENV FLASK_RUN_HOST=0.0.0.0
