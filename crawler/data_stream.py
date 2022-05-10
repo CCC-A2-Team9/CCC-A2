@@ -2,7 +2,6 @@ import tweepy
 import couchdb
 import configparser
 
-
 config = configparser.ConfigParser()
 config.read('config.ini')
 import _json
@@ -88,7 +87,8 @@ def date_range(start, end):
         yield current
         current = current + datetime.timedelta(seconds=1)
 
-db0 = server['all_tweets']
+server = couchdb.Server("http://admin:admin@172.26.132.76:5984/")
+db4 = server['all_tweets']
 db1 = server['scenario1']
 db2 = server['scenario2']
 db3 = server['scenario3']
@@ -98,7 +98,7 @@ class MyStreamListener(tweepy.StreamListener):
     count = 0
     #db settings
     server = couchdb.Server("http://admin:admin@172.26.132.76:5984/")
-    db0 = server['all_tweets']
+    db4 = server['all_tweets']
     db1 = server['scenario1']
     db2 = server['scenario2']
     db3 = server['scenario3']
@@ -111,7 +111,7 @@ class MyStreamListener(tweepy.StreamListener):
         coord = data['coordinates']
         content = data['text']
         id = data['id']
-        
+        print(coord)
         if(coord):
             coord = coord["coordinates"]
             sub = None
@@ -120,11 +120,12 @@ class MyStreamListener(tweepy.StreamListener):
                 # Return true if the point is in the ploygon
                 if suburb[1].contains(point):
                     sub = suburb[0]
+            print(sub)
             if(sub is not None):
                 sent = analyzeContext(content)
                 lan = data['lang']
                 doc = {'suburb': sub, 'sentiment': sent, 'lan': lan}
-                db0.save(doc)
+                db4.save(doc)
 
                 is_save = False
                 for word in keyWords1:
@@ -160,6 +161,6 @@ myStreamListener = MyStreamListener()
 myStream = tweepy.Stream(auth=auth, listener=myStreamListener)
 
 # keywords = ['covid']
-bounding_box_melb = [-124.7771694, 24.520833, -66.947028, 49.384472]  # need to change
+bounding_box_melb = [113.338953078, -43.6345972634, 153.569469029, -10.6681857235]  # need to change
 
 myStream.filter(locations=bounding_box_melb)
