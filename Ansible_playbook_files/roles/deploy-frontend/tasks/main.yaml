@@ -1,10 +1,4 @@
 ---
-# - name: generate frontend configuration of backend
-#   become:
-#     yes
-#   template:
-#     src: webpackDevServer.config.js.j2
-#     dest: '{{remote_working_directory}}/comp90024-project2/frontend/config/webpackDevServer.config.js'
 
 - name: Shut down previous server
   become:
