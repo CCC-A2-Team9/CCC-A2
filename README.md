@@ -8,6 +8,15 @@ Haochu Wang 1281962
 Gengchang Xu 1214774  
 Shiming Zheng 1149897 
 
+## End user usage
+### frontend:
+ http://172.26.132.76:3000/
+### backend:
+ http://172.26.132.76:5000/
+### CouchDB:
+ http://172.26.132.76:5984/_utils/#/
+
+
 ## Video links
 xxxxxxxxx
 
