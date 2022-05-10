@@ -187,6 +187,8 @@ def set2():
     print(res)
     for i in range(len(suburbName)):
         res[suburbName[i]] = {'pos': 0}
+    for i in range(len(suburbName)):
+        dic2[suburbName[i]]=[0,0]
         
     for r in uname_list:
         if r.key[1] == 'neg':
