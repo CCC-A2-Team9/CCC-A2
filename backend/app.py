@@ -89,7 +89,7 @@ def set1():
         res[suburbName[i]] = {'pos': 0}
     
     for i in range(len(suburbName)):
-        dic1[suburbName[i]]=0
+        dic1[suburbName[i]]=[0,0]
     
 
     for r in uname_list:
