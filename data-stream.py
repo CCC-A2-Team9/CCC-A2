@@ -2,6 +2,7 @@ import tweepy
 import couchdb
 import configparser
 
+
 config = configparser.ConfigParser()
 config.read('config.ini')
 import _json
