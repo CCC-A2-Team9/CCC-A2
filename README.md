@@ -1,7 +1,7 @@
 # Team9 - Frontend
 
 ## 1. How to run
-    cd frondend/ docker-compose up
+    cd frontend/ docker-compose up
 
 
 ## 2. Role
