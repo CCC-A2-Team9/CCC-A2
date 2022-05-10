@@ -94,7 +94,10 @@ def date_range(start, end):
         yield current
         current = current + datetime.timedelta(seconds=1)
 
-
+db0 = server['all_tweets']
+db1 = server['scenario1']
+db2 = server['scenario2']
+db3 = server['scenario3']
 class MyStreamListener(tweepy.StreamListener):
     tweets = []
     limit = 100
