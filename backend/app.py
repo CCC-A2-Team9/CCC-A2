@@ -87,6 +87,10 @@ def set1():
     res = dict.fromkeys(suburbName, 0)
     for i in range(len(suburbName)):
         res[suburbName[i]] = {'pos': 0}
+    
+    for i in range(len(suburbName)):
+        dic1[suburbName[i]]=0
+    
 
     for r in uname_list:
         if r.key[1] == 'neg':
@@ -102,6 +106,7 @@ def set1():
             continue
     for r in uname_list:
         res[r.key[0]]['pos'] = dic1[r.key[0]]
+    
     
     for sub in suburbName:
         for doc in aurin1.find({'selector': {'sub': sub}}):
