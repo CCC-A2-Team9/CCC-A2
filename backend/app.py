@@ -18,16 +18,21 @@ def hello_world():
 
 @app.errorhandler(501)
 def error_501_handler(err):
-    return "MapReduce Function went wrong,Error occurs, " + err
+    print("MapReduce Function went wrong,Error occurs, ")
+    print(err)
+    return None
 
 @app.errorhandler(404)
 def error_404_handler(err):
-    return "Something went wrong, because of  " + err
+    print("Something went wrong, because of  ")
+    print(err)
+    return None
 
 
 @app.route("/Scenario1",methods=["GET","POST"])
 def set1():
     
+    print(1)
     map_fun_rm = """
                            function(doc) {
                                emit([doc.userid,doc.text], 1)
@@ -40,6 +45,8 @@ def set1():
             'reduce': reduce_fun_rm
         }
     }}
+    
+    print(2)
     db1["_design/users"] = design
     
     if(db1.view('users/get_unames', group_level=2)==None):
@@ -54,6 +61,9 @@ def set1():
                 temp = doc
             if (temp is not None):
                 db1.delete(temp)  
+                
+                
+    print(3)
     db1.delete(db1["_design/users"])  
     
 
@@ -81,6 +91,10 @@ def set1():
     res = dict.fromkeys(suburbName, 0)
     for i in range(len(suburbName)):
         res[suburbName[i]] = {'pos': 0}
+    
+    for i in range(len(suburbName)):
+        dic1[suburbName[i]]=[0,0]
+    
 
     for r in uname_list:
         if r.key[1] == 'neg':
@@ -96,6 +110,7 @@ def set1():
             continue
     for r in uname_list:
         res[r.key[0]]['pos'] = dic1[r.key[0]]
+    
     
     for sub in suburbName:
         for doc in aurin1.find({'selector': {'sub': sub}}):
@@ -117,6 +132,7 @@ def set1():
 
 @app.route("/Scenario2",methods=["GET","POST"])
 def set2():
+    
     
     map_fun_rm = """
                             function(doc) {
@@ -175,6 +191,8 @@ def set2():
     print(res)
     for i in range(len(suburbName)):
         res[suburbName[i]] = {'pos': 0}
+    for i in range(len(suburbName)):
+        dic2[suburbName[i]]=[0,0]
         
     for r in uname_list:
         if r.key[1] == 'neg':
@@ -210,6 +228,7 @@ def set2():
 
 @app.route("/Scenario3",methods=["GET","POST"])
 def set3():
+   
     
     map_fun_rm = """
                             function(doc) {
