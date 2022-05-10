@@ -28,7 +28,7 @@ def error_404_handler(err):
 @app.route("/Scenario1",methods=["GET","POST"])
 def set1():
     
-    
+    print(1)
     map_fun_rm = """
                            function(doc) {
                                emit([doc.userid,doc.text], 1)
@@ -41,6 +41,8 @@ def set1():
             'reduce': reduce_fun_rm
         }
     }}
+    
+    print(2)
     db1["_design/users"] = design
     
     if(db1.view('users/get_unames', group_level=2)==None):
@@ -55,6 +57,9 @@ def set1():
                 temp = doc
             if (temp is not None):
                 db1.delete(temp)  
+                
+                
+    print(3)
     db1.delete(db1["_design/users"])  
     
 
