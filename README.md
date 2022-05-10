@@ -24,7 +24,7 @@ xxxxxxxxx
 xxxxxx
 
 ## Demo
-xxxxxx
+https://github.com/CCC-A2-Team9/CCC-A2/blob/main/Team9_COMP90024_Project2_pre.pptx.pdf
 
 ## System Architecture
 ![system-ar](https://user-images.githubusercontent.com/71579588/167285200-a6da1de9-a03c-4ff9-8803-277a008fae11.png)
