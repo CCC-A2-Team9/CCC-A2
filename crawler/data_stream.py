@@ -88,7 +88,7 @@ def date_range(start, end):
         current = current + datetime.timedelta(seconds=1)
 
 server = couchdb.Server("http://admin:admin@172.26.132.76:5984/")
-db0 = server['all_tweets']
+db4 = server['all_tweets']
 db1 = server['scenario1']
 db2 = server['scenario2']
 db3 = server['scenario3']
@@ -98,7 +98,7 @@ class MyStreamListener(tweepy.StreamListener):
     count = 0
     #db settings
     server = couchdb.Server("http://admin:admin@172.26.132.76:5984/")
-    db0 = server['all_tweets']
+    db4 = server['all_tweets']
     db1 = server['scenario1']
     db2 = server['scenario2']
     db3 = server['scenario3']
