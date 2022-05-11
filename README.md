@@ -18,7 +18,7 @@ Shiming Zheng 1149897
 
 
 ## Video links
-xxxxxxxxx
+https://www.youtube.com/playlist?list=PLDm_bwsWBEbNV_cvU9CaZkuFJHa5UGKUH
 
 ## Report
 xxxxxx
