@@ -21,7 +21,7 @@ Shiming Zheng 1149897
 https://www.youtube.com/playlist?list=PLDm_bwsWBEbNV_cvU9CaZkuFJHa5UGKUH
 
 ## Report
-xxxxxx
+https://github.com/CCC-A2-Team9/CCC-A2/blob/main/Team9%20COMP90024%20Project2%20report.pdf
 
 ## Demo
 https://github.com/CCC-A2-Team9/CCC-A2/blob/main/Team9_COMP90024_Project2_pre.pptx.pdf
