@@ -24,7 +24,7 @@ https://www.youtube.com/playlist?list=PLDm_bwsWBEbNV_cvU9CaZkuFJHa5UGKUH
 https://github.com/CCC-A2-Team9/CCC-A2/blob/main/Team9%20COMP90024%20Project2%20report.pdf
 
 ## Demo
-https://github.com/CCC-A2-Team9/CCC-A2/blob/main/Team9_COMP90024_Project2_pre.pptx.pdf
+https://github.com/CCC-A2-Team9/CCC-A2/blob/main/Team9_COMP90024_Project2_pre.pdf
 
 ## System Architecture
 ![system-ar](https://user-images.githubusercontent.com/71579588/167285200-a6da1de9-a03c-4ff9-8803-277a008fae11.png)
