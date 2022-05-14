@@ -2,17 +2,11 @@
 
 ## 1. Role
     Used to harvest data from twitter.
+    
+## 2. Main Components
+- Using Tweepy API to harvest data.
+- Using NLP to analyze the data and classify.
+- Using couchdb to store the data.
 
- 
- 
-## 3. Role
-Dynamically display data visualization for our cloud-based system.
-
-## 4. Main Components
-- The login page
-- The homepage
-- The team profile page
-- Data visualization pages for each scenario
-
-## 5. How to fetch data from Back-end
-When we open and refresh the page, the data displayed in histograms, pie charts, and the estimated coefficients of the linear regression model will be retrieved via the ajax() method in Flask. With the ajax() method, an approach used to perform an AJAX (asynchronous HTTP) request, we can request only a portion of the page information we need each time, instead of requesting a completely new page. The process is that, first, when the page is loaded, JavaScript will create an XMLHttpRequest object. Then a request will be sent by this XMLHttpRequest object to the back-end server. Afterward, the back-end server will send a request to the CouchDB database, and it will send back a response to our back-end server. Finally, the data will be performed on our webpage after obtaining the response from the back-end server. 
+## 3. Main Process
+First, we use tweepy API to harvest data. Second, we do data preprocess (like removing the stopwords, removing useless url and @XXX). After that, we feed the data into nlp analyzer and get the setiment (pos/neg/neu). Then, we divide them into different suburb according to their coordinates. Finally, we use couchdb to store them.
