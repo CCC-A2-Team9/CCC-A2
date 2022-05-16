@@ -131,10 +131,10 @@ def set1():
         newRate.append(float(i))
 
     for r in uname_list:
+        slope, intercept, r_value, p_value, std_err = st.linregress(x, newRate)
         print(slope)
         print(intercept)
         print(res[r.key[0]])
-        slope, intercept, r_value, p_value, std_err = st.linregress(x, newRate)
         res[r.key[0]]['b0'] = intercept
         res[r.key[0]]['b1'] = slope
     
